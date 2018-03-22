@@ -6,42 +6,26 @@
 
 ``` up
 
-# modificações 
-container {
-    o tamanho do container foi modificado - então todos os elementos das divs foram alterados também
-    menu principal{
-        os tamanhos e todo o menu foi modificado 
-        sub{
-            as posições do menus e as cores foi alterado , e cores ;
-            
-        }
-    }
+# modificações
 
-    menu login {
-        o login foi trocado para um novo 
-        observações {
-            os css novos desse menu , tem uma target escrito - /* menu lateral */
-            você pode ver os css novos po lá 
-        }
-    }
+- header e submenu a tipografia foi modificado e o tamanho dos headers
 
-    menu segundo {
-        os tamanhos e todo o menu foi modificado
-        sub{
-            as posição , e tamanhos das fontes foram modificado;
-        }
-    }
+- as classe do header do menu principal continua o mesmo, algumas classe foi adiciona para poder para o style do component do sub menu - começando da linha 385 até 1459
 
-    container layout{
-        os tamanhos do layout foram modificados e alterados,
-        parte esquerdo {
-            o padding foi adaptado as layout 
-        }
-    }
+- container do header e todo o código foi modificado[cabecalho-f] para o código que esta em / index.min.css /
 
-    footer{
-        container {
-            o container foi modificado , as logos foi colocadas , 
-        }
-    }
-}
+- header o submenu foi alterado como posição absolute e as cores está compatível com cada menu submenu - arquivo do css esta em - / index.min.css
+
+- header do login - o menu foi alterado para um novo - para o código esta no arquivo - / index.min.css / na linha - 7448 , 
+o input de pesquisa o css está como important porque não sei oque está acontecendo no servidor do uol da produção
+
+- header terceiro , os submenus foi alterado , colocado no submenu do css posição absolute , 
+
+- layout container , grid-2 - o tamanho horizontal foi modificado para adaptar com o container , a div de anuncio da div o padding foi diminuido para adaptar no container horizontal
+
+- footer o padding foi modificado - esta do html style e os icones foi colocar como background , arquivo do cofigo / index.min.css /
+
+- footer o padding final foi modificado esta do html style ;
+
+- footer os icones as imagem novas foi adiciona do container 8107 até 8143 do arquivo / index.min.css
+ 
