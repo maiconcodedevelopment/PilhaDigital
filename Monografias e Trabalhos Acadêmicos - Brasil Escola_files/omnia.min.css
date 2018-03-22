@@ -1,0 +1,673 @@
+@font-face {
+    font-family: 'BenderBlack';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/Bender-Black.eot?#iefix') format('embedded-opentype'), url('../fonts/Bender-Black.woff') format('woff'), url('../fonts/Bender-Black.ttf') format('truetype'), url('../fonts/Bender-Black.svg#Bender-Black') format('svg')
+}
+
+@font-face {
+    font-family: 'Bender';
+    font-style: italic;
+    font-weight: 500;
+    src: url('../fonts/Bender-Italic.eot?#iefix') format('embedded-opentype'), url('../fonts/Bender-Italic.woff') format('woff'), url('../fonts/Bender-Italic.ttf') format('truetype'), url('../fonts/Bender-Italic.svg#Bender-Italic') format('svg')
+}
+
+@font-face {
+    font-family: 'Bender';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/Bender-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Bender-Bold.woff') format('woff'), url('../fonts/Bender-Bold.ttf') format('truetype'), url('../fonts/Bender-Bold.svg#Bender-Bold') format('svg')
+}
+
+@font-face {
+    font-family: 'Bender';
+    font-style: italic;
+    font-weight: 700;
+    src: url('../fonts/Bender-BoldItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/Bender-BoldItalic.woff') format('woff'), url('../fonts/Bender-BoldItalic.ttf') format('truetype'), url('../fonts/Bender-BoldItalic.svg#Bender-BoldItalic') format('svg')
+}
+
+#menu-r7 {
+    width: 845px
+}
+
+.cursos-online {
+    margin-bottom: 24px;
+    width: 304px;
+    height: 641px;
+    min-height: 641px;
+    overflow: hidden;
+    color: #172f47;
+    position: relative;
+    text-align: left;
+    background: #fff;
+    border-bottom: 3px solid #e3e4e8
+}
+
+.cursos-online .topo-cursos {
+    background: #ebbb2c
+}
+
+.cursos-online .cor-curso {
+    background: #4980f4;
+    padding: 9px 17px;
+    float: left
+}
+
+.cursos-online .cor-curso img {
+    display: block
+}
+
+.cursos-online .opc {
+    color: #172f47;
+    font-family: Bender;
+    font-size: 11px;
+    font-style: italic;
+    font-weight: 700;
+    text-decoration: underline;
+    margin-left: 10px;
+    margin-top: 11px;
+    display: inline-block
+}
+
+.cursos-online .invista {
+    display: block;
+    clear: both;
+    text-align: center;
+    font-size: 15px;
+    padding: 8px 0;
+    font-family: Bender;
+    font-style: italic;
+    font-weight: 700
+}
+
+.cursos-online .invista b {
+    color: #fff
+}
+
+.cursos-online .cursos-carreira {
+    float: left;
+    width: 152px;
+    border-right: 1px solid #d8d8d8;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.cursos-online .cursos-carreira:nth-child(2),
+.cursos-online .cursos-carreira:nth-child(3) {
+    min-height: 282px
+}
+
+.cursos-online .cursos-carreira img {
+    width: 150px;
+    height: 85px;
+    display: block
+}
+
+.cursos-online .cursos-carreira .espacamento-bloco {
+    padding: 12px 21px;
+    text-align: center;
+    min-height: 190px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.cursos-online .cursos-carreira .espacamento-bloco .cursos-titulo {
+    font-family: BenderBlack;
+    font-size: 15px;
+    color: #010101;
+    height: 61px;
+    max-height: 61px;
+    overflow: hidden;
+    display: block
+}
+
+.cursos-online .cursos-carreira .espacamento-bloco .precos {
+    float: right;
+    margin-bottom: 10px
+}
+
+.cursos-online .cursos-carreira .espacamento-bloco .vezes {
+    font-size: 14px;
+    float: left;
+    font-family: Bender;
+    font-style: italic;
+    color: #5d5d5d;
+    line-height: 15px;
+    margin-top: 3px
+}
+
+.cursos-online .cursos-carreira .espacamento-bloco .vezes strong {
+    display: block;
+    color: #4980f4;
+    font-style: normal
+}
+
+.cursos-online .cursos-carreira .espacamento-bloco .valor {
+    color: #4980f4;
+    font-size: 33px;
+    font-family: Bender;
+    font-weight: 700;
+    margin-left: 4px
+}
+
+.cursos-online .cursos-carreira .espacamento-bloco p {
+    font-size: 11px;
+    color: #5d5d5d;
+    text-align: right;
+    margin-top: -3px;
+    font-family: Bender;
+    font-weight: 500;
+    font-style: italic
+}
+
+.cursos-online .cursos-carreira .espacamento-bloco a {
+    clear: both;
+    background: #07a64c;
+    padding: 10.5px 0;
+    width: 100%;
+    display: block;
+    font-family: BenderBlack;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out
+}
+
+.cursos-online .cursos-carreira .espacamento-bloco a:hover {
+    background: #0f783d
+}
+
+.conteudo-materia h2 {
+    color: #000 !important;
+    position: relative;
+    margin-bottom: 37px;
+    font-size: 20px
+}
+
+.indice .itens-indice ol li:before {
+    content: none
+}
+
+.omnia-ol-3 {
+    margin-top: -30px
+}
+
+ol.omnia-ol-3 li,
+ol.omnia-ol-3 li:first-child {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-left: 55px !important
+}
+
+ol.omnia-ol-4 li,
+ol.omnia-ol-4 li:first-child {
+    margin-left: 95px !important
+}
+
+ol.omnia-ol-3 li:last-child {
+    padding-bottom: 25px !important
+}
+
+ol.omnia-ol-3 li,
+ol.omnia-ol-3 li a {
+    font-size: 16px !important
+}
+
+.publicidade-cima {
+    text-align: center
+}
+
+.publicidade-cima div {
+    margin: 0 auto
+}
+
+/* #cabecalho-f .login input[type="submit"] {
+    font-weight: 700;
+    border: 0;
+    background: #9a9ca5;
+    color: #fff;
+    padding: 9px 10.4px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    top: 1px;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+    margin-left: -4px
+}
+
+#cabecalho-f .login input[type="submit"]:hover {
+    background: #264d55
+} */
+
+.menu ul li a {
+    height: 15px;
+    padding-top: 4px;
+    padding-bottom: 17px
+}
+
+.monografias-topo ul.sub li a {
+    height: auto
+}
+
+.omnia-link-visite-canal {
+    margin-left: 40px !important;
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px
+}
+
+.omnia-height-ads-sky {
+    height: 750px !important
+}
+
+.grid-display-omnia {
+    display: block !important
+}
+
+.cab-omnia-full {
+    width: 1280px !important
+}
+
+.cab-omnia-full #menu-topo li.menu-bloco,
+.conteudo-omnia-full .conteudo-principal .menu-item li.educador-page-borda {
+    display: block !important
+}
+
+.conteudo-omnia-full .conteudo-principal .menu-item li.educador-page-borda:nth-child(6) {
+    width: 154px
+}
+
+.conteudo-omnia-full .conteudo-principal .menu-item li.educador-page-borda:nth-child(7) {
+    width: 155px
+}
+
+.conteudo-omnia-full .conteudo-principal .menu-item li.educador-page-borda:nth-child(8) {
+    display: block !important
+}
+
+.conteudo-omnia-full .conteudo-principal .menu-item li.educador-page-borda:nth-child(6) .educador-page-topo {
+    border-right: 1px solid #FFF !important
+}
+
+.conteudo-omnia-full .conteudo-principal .menu-item li.educador-page-borda:last-child a {
+    width: 99.4% !important
+}
+
+.logo-omnia-full {
+    margin-right: 33px !important
+}
+
+.conteudo-omnia-full {
+    width: 1280px !important
+}
+
+.conteudo-omnia-full .publicidade-cima {
+    width: 1190px !important
+}
+
+.conteudo-omnia-full .publicidade-cima div {
+    margin: 0 auto
+}
+
+.omnia-bg-full-2 .menu-topo .menu-col,
+.omnia-bg-full-2 #menu-rodape .menu-col {
+    width: 1081px !important
+}
+
+.omnia-bg-full-2 .menu-topo ul .canais-borda .menu-col,
+.omnia-bg-full-2 #menu-rodape ul .canais-borda .menu-col {
+    left: -990px !important
+}
+
+.omnia-bg-full-2 .menu .menu-col,
+.omnia-bg-full-2 .menu-rodape .menu-col {
+    width: 1279px !important
+}
+
+.omnia-bg-full-2 #cabecalho-f .logo {
+    width: 207px !important
+}
+
+.omnia-bg-full-2 #cabecalho-f .conteudo-cabecalho {
+    width: 1026px !important
+}
+
+.omnia-bg-full-2 #cabecalho-f .pesquisa-padrao {
+    width: 310px !important
+}
+
+.omnia-bg-full-2 #cabecalho-f .pesquisa-padrao form input[type="text"] {
+    width: 230px !important
+}
+
+.omnia-bg-full-2 #cabecalho-f .cab-facebook {
+    margin: 19px 18px 0 0 !important
+}
+
+.omnia-bg-full-2 #cabecalho-f .separa {
+    height: 66px !important;
+    margin: 0 18px 0 23px !important
+}
+
+header#cabecalho-r {
+    width: 100% !important
+}
+
+.publicidade-cima div iframe[scrolling="no"] {
+    margin-left: 0 !important
+}
+
+.conteudo-materia p {
+    margin-bottom: 15px !important
+}
+
+.menu ul li div .mais-acessadas .conteudo-acessadas {
+    width: 200px !important
+}
+
+.mais-acessadas .conteudo-acessadas .top-acessadas {
+    padding-bottom: 22px;
+    width: 195px !important
+}
+
+.conteudo-materia ol li {
+    list-style: initial !important;
+    list-style-type: decimal !important;
+    margin-left: 50px !important
+}
+
+.conteudo-materia ol {
+    margin-bottom: 15px !important
+}
+
+.skyOmniaHeader {
+    margin-top: -42px
+}
+
+.omnia-tema-tv {
+    font-size: 15px;
+    font-weight: initial
+}
+
+.omnia-tv-titulo-a {
+    color: #fff;
+    text-decoration: none
+}
+
+.omnia-tv-titulo-a:hover {
+    text-decoration: underline
+}
+
+.logo-brasil-escola {
+    margin-right: 0px !important
+}
+
+.menu-rodape ul .noticias-borda,
+.menu-topo ul .noticias-borda a.noticias-color {
+    font-size: 11px !important;
+    padding-bottom: 7px !important
+}
+
+.bloco-materia-img-2 .materia ul li:last-child {
+    right: -35px !important
+}
+
+.marcador-paginacao {
+    line-height: 30px !important
+}
+
+.omnia-tema-tv {
+    font-size: 15px;
+    font-weight: initial
+}
+
+.omnia-tv-titulo-a {
+    color: #fff;
+    text-decoration: none
+}
+
+.omnia-tv-titulo-a:hover {
+    text-decoration: underline
+}
+
+.publicidade-cima {
+    position: relative;
+    z-index: 2
+}
+
+.menu {
+    position: relative;
+    z-index: 2
+}
+
+.bloco {
+    margin-bottom: 0 !important
+}
+
+.bloco .shopping {
+    margin-bottom: 0 !important;
+    height: 200px !important
+}
+
+.conteudo-pagina td,
+.conteudo-pagina table {
+    border-collapse: collapse;
+    border: 1px solid black !important;
+    padding: 1px
+}
+
+.comentarios .comentario .inner .acao a.nao_curti {
+    background: url(../images/icons/nao_curti.png);
+    background-repeat: no-repeat;
+    height: 18px;
+    padding-left: 22px;
+    line-height: 21px;
+    margin-right: 20px
+}
+
+.comentarios .comentario .inner .acao a.nao_curti:hover {
+    background: url(../images/icons/nao_curti-over.png);
+    background-repeat: no-repeat
+}
+
+.resposta>.comentario_enviado {
+    margin: 20px 0 0 85px
+}
+
+.comentarios input[type=checkbox] {
+    visibility: hidden
+}
+
+.comentarios .squaredTwo {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    display: inline-block
+}
+
+.comentarios .squaredTwo label {
+    cursor: pointer;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 2px;
+    top: 2px;
+    border: 2px solid #c4c6d0;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out
+}
+
+.comentarios .squaredTwo label:after {
+    -ms-filter: "alpha(opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 4px;
+    left: 3px;
+    border: 3px solid #9597a0;
+    border-top: 0;
+    border-right: 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+}
+
+.comentarios .squaredTwo label:hover::after {
+    -ms-filter: "alpha(opacity=30)";
+    filter: alpha(opacity=30);
+    opacity: .3
+}
+
+.comentarios .squaredTwo input[type=checkbox]:checked+label {
+    background: #264d55;
+    border-color: #264d55
+}
+
+.comentarios .squaredTwo input[type=checkbox]:checked+label:after {
+    -ms-filter: "alpha(opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+    border-color: #fff
+}
+
+#barrauol {
+    z-index: 12 !important
+}
+
+.box-publicidade-topo {
+    min-height: 90px;
+    max-height: 250px;
+    min-width: 728px;
+    max-width: 970px
+}
+
+.conteudo-materia figure {
+    margin: 15px 15px
+}
+
+.conteudo-materia figure>figcaption {
+    font-size: 14px;
+    text-align: center;
+    display: block
+}
+
+.conteudo-materia h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    background-color: transparent;
+    text-transform: none
+}
+
+.conteudo-materia h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+    padding: 0;
+    background-color: transparent;
+    text-transform: none
+}
+
+.conteudo-materia h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 500
+}
+
+.conteudo-materia h4 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 500
+}
+
+.monografias {
+    background-color: #ffa106
+}
+
+.h2_tv {
+    position: absolute;
+    z-index: 500;
+    padding: 12px 14px;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase
+}
+
+#box_dir_social {
+    width: 300px;
+    height: 150px
+}
+
+#box_dir_social ul li {
+    float: left
+}
+
+#box_dir_social ul li:nth-child(1) {
+    width: 150px;
+    height: 150px;
+    background: url(../images/sociais/dir/fb_150_150.png)
+}
+
+#box_dir_social ul li:nth-child(1) a {
+    display: block;
+    width: 150px;
+    height: 150px;
+    cursor: pointer
+}
+
+#box_dir_social ul li:nth-child(2),
+#box_dir_social ul li:nth-child(3),
+#box_dir_social ul li:nth-child(4),
+#box_dir_social ul li:nth-child(5) {
+    width: 75px;
+    height: 75px
+}
+
+#box_dir_social ul li:nth-child(2) a,
+#box_dir_social ul li:nth-child(3) a,
+#box_dir_social ul li:nth-child(4) a,
+#box_dir_social ul li:nth-child(5) a {
+    display: block;
+    width: 75px;
+    height: 75px;
+    cursor: pointer
+}
+
+#box_dir_social ul li:nth-child(2) {
+    background: url(../images/sociais/dir/tw_75_75.png)
+}
+
+#box_dir_social ul li:nth-child(3) {
+    background: url(../images/sociais/dir/g_plus_75_75.png)
+}
+
+#box_dir_social ul li:nth-child(4) {
+    background: url(../images/sociais/dir/yt_75_75.png)
+}
+
+#box_dir_social ul li:nth-child(5) {
+    background: url(../images/sociais/dir/rss_75_75.png)
+}

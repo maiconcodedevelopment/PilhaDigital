@@ -1,0 +1,3525 @@
+<!DOCTYPE html>
+
+<html xml:lang="pt-br" lang="pt-BR" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script type="text/javascript">
+		window.NREUM || (NREUM = {}), __nr_require = function (e, t, n) {
+			function r(n) {
+				if (!t[n]) {
+					var o = t[n] = {
+						exports: {}
+					};
+					e[n][0].call(o.exports, function (t) {
+						var o = e[n][1][t];
+						return r(o || t)
+					}, o, o.exports)
+				}
+				return t[n].exports
+			}
+			if ("function" == typeof __nr_require) return __nr_require;
+			for (var o = 0; o < n.length; o++) r(n[o]);
+			return r
+		}({
+			1: [function (e, t, n) {
+				function r() {}
+
+				function o(e, t, n) {
+					return function () {
+						return i(e, [f.now()].concat(u(arguments)), t ? null : this, n), t ? void 0 : this
+					}
+				}
+				var i = e("handle"),
+					a = e(2),
+					u = e(3),
+					c = e("ee").get("tracer"),
+					f = e("loader"),
+					s = NREUM;
+				"undefined" == typeof window.newrelic && (newrelic = s);
+				var p = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit",
+						"addRelease"
+					],
+					d = "api-",
+					l = d + "ixn-";
+				a(p, function (e, t) {
+						s[t] = o(d + t, !0, "api")
+					}), s.addPageAction = o(d + "addPageAction", !0), s.setCurrentRouteName = o(d + "routeName", !0), t.exports =
+					newrelic, s.interaction = function () {
+						return (new r).get()
+					};
+				var m = r.prototype = {
+					createTracer: function (e, t) {
+						var n = {},
+							r = this,
+							o = "function" == typeof t;
+						return i(l + "tracer", [f.now(), e, n], r),
+							function () {
+								if (c.emit((o ? "" : "no-") + "fn-start", [f.now(), r, o], n), o) try {
+									return t.apply(this, arguments)
+								} catch (e) {
+									throw c.emit("fn-err", [arguments, this, e], n), e
+								} finally {
+									c.emit("fn-end", [f.now()], n)
+								}
+							}
+					}
+				};
+				a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (e, t) {
+					m[t] = o(l + t)
+				}), newrelic.noticeError = function (e) {
+					"string" == typeof e && (e = new Error(e)), i("err", [e, f.now()])
+				}
+			}, {}],
+			2: [function (e, t, n) {
+				function r(e, t) {
+					var n = [],
+						r = "",
+						i = 0;
+					for (r in e) o.call(e, r) && (n[i] = t(r, e[r]), i += 1);
+					return n
+				}
+				var o = Object.prototype.hasOwnProperty;
+				t.exports = r
+			}, {}],
+			3: [function (e, t, n) {
+				function r(e, t, n) {
+					t || (t = 0), "undefined" == typeof n && (n = e ? e.length : 0);
+					for (var r = -1, o = n - t || 0, i = Array(o < 0 ? 0 : o); ++r < o;) i[r] = e[t + r];
+					return i
+				}
+				t.exports = r
+			}, {}],
+			4: [function (e, t, n) {
+				t.exports = {
+					exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window
+						.performance.timing.navigationStart
+				}
+			}, {}],
+			ee: [function (e, t, n) {
+				function r() {}
+
+				function o(e) {
+					function t(e) {
+						return e && e instanceof r ? e : e ? c(e, u, i) : i()
+					}
+
+					function n(n, r, o, i) {
+						if (!d.aborted || i) {
+							e && e(n, r, o);
+							for (var a = t(o), u = m(n), c = u.length, f = 0; f < c; f++) u[f].apply(a, r);
+							var p = s[y[n]];
+							return p && p.push([b, n, r, a]), a
+						}
+					}
+
+					function l(e, t) {
+						v[e] = m(e).concat(t)
+					}
+
+					function m(e) {
+						return v[e] || []
+					}
+
+					function w(e) {
+						return p[e] = p[e] || o(n)
+					}
+
+					function g(e, t) {
+						f(e, function (e, n) {
+							t = t || "feature", y[n] = t, t in s || (s[t] = [])
+						})
+					}
+					var v = {},
+						y = {},
+						b = {
+							on: l,
+							emit: n,
+							get: w,
+							listeners: m,
+							context: t,
+							buffer: g,
+							abort: a,
+							aborted: !1
+						};
+					return b
+				}
+
+				function i() {
+					return new r
+				}
+
+				function a() {
+					(s.api || s.feature) && (d.aborted = !0, s = d.backlog = {})
+				}
+				var u = "nr@context",
+					c = e("gos"),
+					f = e(2),
+					s = {},
+					p = {},
+					d = t.exports = o();
+				d.backlog = s
+			}, {}],
+			gos: [function (e, t, n) {
+				function r(e, t, n) {
+					if (o.call(e, t)) return e[t];
+					var r = n();
+					if (Object.defineProperty && Object.keys) try {
+						return Object.defineProperty(e, t, {
+							value: r,
+							writable: !0,
+							enumerable: !1
+						}), r
+					} catch (i) {}
+					return e[t] = r, r
+				}
+				var o = Object.prototype.hasOwnProperty;
+				t.exports = r
+			}, {}],
+			handle: [function (e, t, n) {
+				function r(e, t, n, r) {
+					o.buffer([e], r), o.emit(e, t, n)
+				}
+				var o = e("ee").get("handle");
+				t.exports = r, r.ee = o
+			}, {}],
+			id: [function (e, t, n) {
+				function r(e) {
+					var t = typeof e;
+					return !e || "object" !== t && "function" !== t ? -1 : e === window ? 0 : a(e, i, function () {
+						return o++
+					})
+				}
+				var o = 1,
+					i = "nr@id",
+					a = e("gos");
+				t.exports = r
+			}, {}],
+			loader: [function (e, t, n) {
+				function r() {
+					if (!x++) {
+						var e = h.info = NREUM.info,
+							t = d.getElementsByTagName("script")[0];
+						if (setTimeout(s.abort, 3e4), !(e && e.licenseKey && e.applicationID && t)) return s.abort();
+						f(y, function (t, n) {
+							e[t] || (e[t] = n)
+						}), c("mark", ["onload", a() + h.offset], null, "api");
+						var n = d.createElement("script");
+						n.src = "https://" + e.agent, t.parentNode.insertBefore(n, t)
+					}
+				}
+
+				function o() {
+					"complete" === d.readyState && i()
+				}
+
+				function i() {
+					c("mark", ["domContent", a() + h.offset], null, "api")
+				}
+
+				function a() {
+					return E.exists && performance.now ? Math.round(performance.now()) : (u = Math.max((new Date).getTime(), u)) -
+						h.offset
+				}
+				var u = (new Date).getTime(),
+					c = e("handle"),
+					f = e(2),
+					s = e("ee"),
+					p = window,
+					d = p.document,
+					l = "addEventListener",
+					m = "attachEvent",
+					w = p.XMLHttpRequest,
+					g = w && w.prototype;
+				NREUM.o = {
+					ST: setTimeout,
+					SI: p.setImmediate,
+					CT: clearTimeout,
+					XHR: w,
+					REQ: p.Request,
+					EV: p.Event,
+					PR: p.Promise,
+					MO: p.MutationObserver
+				};
+				var v = "" + location,
+					y = {
+						beacon: "bam.nr-data.net",
+						errorBeacon: "bam.nr-data.net",
+						agent: "js-agent.newrelic.com/nr-1071.min.js"
+					},
+					b = w && g && g[l] && !/CriOS/.test(navigator.userAgent),
+					h = t.exports = {
+						offset: u,
+						now: a,
+						origin: v,
+						features: {},
+						xhrWrappable: b
+					};
+				e(1), d[l] ? (d[l]("DOMContentLoaded", i, !1), p[l]("load", r, !1)) : (d[m]("onreadystatechange", o), p[m](
+					"onload", r)), c("mark", ["firstbyte", u], null, "api");
+				var x = 0,
+					E = e(4)
+			}, {}]
+		}, {}, ["loader"]);
+	</script>
+
+	<title>Monografias e Trabalhos Acadêmicos - Brasil Escola</title>
+	<meta name="description" content="A Monografia volta-se para um ponto particular de uma ciência, de uma arte, de uma localidade, sobre um mesmo assunto ou sobre assuntos relacionados. O Brasil Escola possui hoje o maior catálogo de monografias e trabalhos acadêmicos, publicados pelos usuários do Brasil Escola."
+	/>
+	<meta name="keywords" content="monografias, monografia, trabalho acadêmico, universitário, universidade, pesquisa." />
+	<link rel="canonical" itemprop="articleSection" href="https://monografias.brasilescola.uol.com.br/" />
+
+
+	<meta property="og:locale" content="pt_BR" />
+	<meta property="og:title" content="Monografias e Trabalhos Acadêmicos - Brasil Escola" />
+
+	<meta property="og:url" content="https://monografias.brasilescola.uol.com.br/" />
+
+	<meta property="og:site_name" content="Monografias Brasil Escola" />
+
+	<script>
+		var URL = "https://monografias.brasilescola.uol.com.br/";
+	</script>
+
+	<meta name="robots" content="NOODP" />
+	<link href="https://monografias.brasilescola.uol.com.br/rss/" type="application/rss+xml" rel="alternate" title="Conteúdo via RSS"
+	/>
+
+	<link rel="shortcut icon" href="https://monografias.brasilescola.uol.com.br/assets/images/favicon.ico" title="Favicon">
+	<link href="Monografias e Trabalhos Acadêmicos - Brasil Escola_files/index.min.css" rel="stylesheet">
+
+	<link href="https://monografias.brasilescola.uol.com.br/assets/slick/slick.css" rel="stylesheet" type="text/css" />
+	<link href="https://monografias.brasilescola.uol.com.br/assets/css/slider.min.css" rel="stylesheet">
+
+	<link href="Monografias e Trabalhos Acadêmicos - Brasil Escola_files/omnia.min.css?v11666" rel="stylesheet">
+
+	<link href="https://brasilescola.uol.com.br/rss/" type="application/rss+xml" rel="alternate" title="Conteúdo via RSS" />
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+	<!-- Google AD Old -->
+	<!--		<script type='text/javascript'>
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+			(function () {
+				var gads = document.createElement('script');
+				gads.async = true;
+				gads.type = 'text/javascript';
+				var useSSL = 'https:' == document.location.protocol;
+				gads.src = (useSSL ? 'https:' : 'http:') +
+						'//www.googletagservices.com/tag/js/gpt.js';
+				var node = document.getElementsByTagName('script')[0];
+				node.parentNode.insertBefore(gads, node);
+			})();
+		</script>-->
+
+	<!-- Google AD Old -->
+	<!--		<script type='text/javascript'>
+			googletag.cmd.push(function () {
+							var mappingBG = googletag.sizeMapping().
+							addSize([1681, 600], [2240, 1280]).
+							addSize([1024, 600], [1680, 1280]).
+							addSize([0, 0], [1680, 1280]).
+							build();
+											if(screen.width > 1680){
+													if(screen.width > 1279){
+													}
+														if(screen.width > 1279){
+														}
+									
+				googletag.pubads().enableSingleRequest();
+				googletag.enableServices();
+			});
+		</script>-->
+
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-6338943-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+
+	<!-- UOL TAG MANAGER -->
+	<script type="text/javascript">
+		window.universal_variable = window.universal_variable || {};
+		window.universal_variable.dfp = {
+			"custom_params": {
+				"subchan": ""
+			}
+		}
+		window.uolads = window.uolads || [];
+		(function () {
+			var scr = document.createElement("script");
+			scr.async = true;
+			scr.src = "//tm.jsuol.com.br/uoltm.js?id=fnht1u";
+			var el = document.getElementsByTagName("script")[0];
+			el.parentNode.insertBefore(scr, el);
+		})();
+	</script>
+	<!-- End UOL Tag Manager -->
+
+</head>
+
+<body class="bloco-lado-esquerdo">
+	<div id="navigation-topo ">
+		<div class="centro">
+			<div class="logo-brasil-escola">
+				<a href="https://brasilescola.uol.com.br">
+					<img src="https://monografias.brasilescola.uol.com.br/assets/images/cabecalho/brasil-escola-logo.png" alt="Brasil Escola"
+					    title="Brasil Escola">
+				</a>
+			</div>
+			<div class="menu-topo " id="menu-topo">
+				<ul class="menu-item">
+					<li class="menu-bloco disciplinas-borda">
+						<a href="https://brasilescola.uol.com.br/disciplinas/" class="disciplinas-color">
+							Disciplinas </a>
+						<div class="menu-col disciplinas-col">
+							<ul class="sub">
+								<li>
+									<a href="https://brasilescola.uol.com.br/artes/">
+										Artes </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/biografia/">
+										Biografias </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/biologia/">
+										Biologia </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/espanhol/">
+										Espanhol </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/educacao-fisica/">
+										Educação Física </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/filosofia/">
+										Filosofia </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/fisica/">
+										Física </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/geografia/">
+										Geografia </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/brasil/">
+										Geografia do Brasil </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/gramatica/">
+										Gramática </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/historia/">
+										História </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/historia-da-america/">
+										História da América </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/historiab/">
+										História do Brasil </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/historiag/">
+										História Geral </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/ingles/">
+										Inglês </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/italiano/">
+										Italiano </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/literatura/">
+										Literatura </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/matematica/">
+										Matemática </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/portugues/">
+										Português </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/quimica/">
+										Quí­mica </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/redacao/">
+										Redação </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/sociologia/">
+										Sociologia </a>
+								</li>
+
+								<!-- <div class="mais-acessadas disciplinas">
+									<h2>MAIS ACESSADAS</h2>
+									<span class="look look-disciplinas"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a590d3594990.jpg" class="img-ac-0 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a590db2be656.jpg" class="img-ac-1 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a590dded746d.jpg" class="img-ac-2 f-esquerda" alt="" title=""
+									/>
+									<div class="conteudo-acessadas">
+										<a href="https://brasilescola.uol.com.br/biologia/sete-desastres-ecologicos-causados-pelo-homem-no-mundo.htm" class="top-acessadas top-0">
+											5 desastres ecológicos causados pelo homem! </a>
+										<a href="https://brasilescola.uol.com.br/saude/abobora.htm" class="top-acessadas top-1">
+											Razões suficientes para você começar a comer abóbora. </a>
+										<a href="https://brasilescola.uol.com.br/historia/uso-antraz-pelo-bioterrorismo.htm" class="top-acessadas top-2">
+											Conheça o agente biológico preferido dos terroristas. </a>
+									</div>
+								</div> -->
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+					<li class="menu-bloco vestibular-borda">
+						<a href="https://brasilescola.uol.com.br/canais/" class="vestibular-color">
+							Especial </a>
+						<div class="menu-col especial-col">
+							<ul class="sub">
+								<li>
+									<a href="https://brasilescola.uol.com.br/datas-comemorativas/reveillon.htm">
+										Ano Novo </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/carnaval/">
+										Carnaval </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/oscincosentidos/">
+										Cinco sentidos </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br//educacao-fisica/copa-mundo-russia-2018.htm">
+										Copa do Mundo </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/datas-comemorativas/7-setembro-dia-independencia-brasil.htm">
+										Dia da Independência </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/dia-das-criancas/">
+										Dia das Crianças </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/datas-comemorativas/dia-das-maes.htm">
+										Dia das Mães </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/datas-comemorativas/dia-dos-pais-1.htm">
+										Dia dos Pais </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/politica">
+										Eleições 2018 </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/halloween/">
+										Halloween </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/ferias/">
+										Férias </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/detalhes-festa-junina/">
+										Festa Junina </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/natal/">
+										Natal </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/pascoa/">
+										Páscoa </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/datas-comemorativas/dia-da-proclamacao-da-republica.htm">
+										Proclamação da República </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/volta-as-aulas/">
+										Volta às Aulas </a>
+								</li>
+
+								<!-- <div class="mais-acessadas vestibular">
+									<h2>MAIS ACESSADAS</h2>
+									<span class="look look-disciplinas"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-59de8d158984f.jpg" class="img-ac-0 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-59de8d345eecb.jpg" class="img-ac-1 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/especial-59de8d24ae390.jpg" class="img-ac-2 f-esquerda" alt="Especial"
+									    title="Especial" />
+									<div class="conteudo-acessadas">
+										<a href="https://guerras.brasilescola.uol.com.br/idade-media/cerco-constantinopla-1204.htm" class="top-acessadas top-0">
+											Entenda já o que foi o cerco de Constantinopla. </a>
+										<a href="https://brasilescola.uol.com.br/redacao/cronica.htm" class="top-acessadas top-1">
+											A crônica no mundo jornalístico. Fique por dentro já! </a>
+										<a href="https://brasilescola.uol.com.br/saude-na-escola/depressao.htm" class="top-acessadas top-2">
+											Como lidar com a depressão ou evitá-la? Leia aqui! </a>
+									</div>
+								</div> -->
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+					<li class="menu-bloco">
+						<a href="https://brasilescola.uol.com.br/canais/" class="enem-color">
+							+ Pesquisas </a>
+						<div class="menu-col persquisa-col">
+							<ul class="sub">
+								<li>
+									<a href="https://brasilescola.uol.com.br/acordo-ortografico/">
+										Acordo Ortográfico </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/animais/">
+										Animais </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/cultura/">
+										Cultura </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/curiosidades/">
+										Curiosidades </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/datas-comemorativas/">
+										Datas Comemorativas </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/dicas-de-estudo/">
+										Dicas de Estudo </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/doencas/">
+										Doenças </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/drogas/">
+										Drogas </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/economia/">
+										Economia e Finanças </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/educacao/">
+										Educação </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/folclore/">
+										Folclore </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/fonoaudiologia/">
+										Fonoaudiologia </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/frutas/">
+										Frutas </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/informatica/">
+										Informática </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/mitologia/">
+										Mitologia </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/politica/">
+										Política </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/psicologia/">
+										Psicologia </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/religiao/">
+										Religião </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/">
+										Regras da ABNT </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/sexualidade/">
+										Sexualidade </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/saude/">
+										Saúde e Bem-estar </a>
+								</li>
+								<li>
+									<a href="https://brasilescola.uol.com.br/saude-na-escola/">
+										Saúde na Escola </a>
+								</li>
+
+								<!-- <div class="mais-acessadas enem">
+									<h2>MAIS ACESSADAS</h2>
+									<span class="look look-disciplinas"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a591abdb699a.jpg" class="img-ac-0 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a591aec7f079.jpg" class="img-ac-1 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a591b141a1ac.jpg" class="img-ac-2 f-esquerda" alt="" title=""
+									/>
+									<div class="conteudo-acessadas">
+										<a href="https://brasilescola.uol.com.br/biografia/oscar-niemeyer.htm" class="top-acessadas top-0">
+											Conheça a história de vida de Oscar Niemeyer. </a>
+										<a href="https://brasilescola.uol.com.br/mitologia/a-caixa-pandora.htm" class="top-acessadas top-1">
+											Leia sobre a famosa caixa que aprisiona os males do mundo. </a>
+										<a href="https://brasilescola.uol.com.br/acordo-ortografico/o-alfabeto-brasileiro-as-26-letras.htm" class="top-acessadas top-2">
+											As 26 letras que compõem o alfabeto brasileiro. </a>
+									</div>
+								</div> -->
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+					<li class="menu-bloco educador-borda">
+						<a href="https://vestibular.brasilescola.uol.com.br/enem/" class="educador-color">
+							Enem </a>
+						<div class="menu-col enem-col">
+							<ul class="sub">
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/enem-2018.htm">
+										Enem 2018 </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/lista-adesao-enem.htm">
+										Adesão </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/atendimento-especifico-especializado-no-enem.htm">
+										Atendimento Especial </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/como-obter-certificado-conclusao-ensino-medio-pelo-enem.htm">
+										Certificação </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/correcao-enem-2017.htm">
+										Correção Enem 2017 </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/criterio-correcao-das-redacoes-enem.htm">
+										Correção da Redação </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/dicas-para-enem.htm">
+										Dicas para o Enem </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/enem-prouni.htm">
+										Enem e ProUni </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/enem-por-escola-2015">
+										Enem por Escola </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/como-estudar-portugal-pelo-enem.htm">
+										Estudar em Portugal </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/bolsas-estudo/fies.htm">
+										Fies </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/como-calcular-media-enem.htm">
+										Média do Enem </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/como-calcular-nota-enem.htm">
+										Nota do Enem </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/noticias/">
+										Notícias </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/plantao-enem.htm">
+										Plantão do Enem </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/por-que-fazer-enem.htm">
+										Por que fazer? </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/banco-de-redacoes/">
+										Pratique sua redação </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/provas-gabaritos-enem.htm">
+										Provas e Gabaritos </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/a-redacao-sem-susto.htm">
+										Redação do Enem </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/simulado/">
+										Simulado </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/sisu.htm">
+										SiSU </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/o-que-sisutec.htm">
+										Sisutec </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/o-que-eu-posso-fazer-com-media-enem.htm">
+										Usando a nota do Enem </a>
+								</li>
+								<li>
+									<a href="https://vestibular.brasilescola.uol.com.br/enem/videos">
+										Vídeos </a>
+								</li>
+
+								<!-- <div class="mais-acessadas educador">
+									<h2>MAIS ACESSADAS</h2>
+									<span class="look look-disciplinas"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/fies-5a9e9e8a543e7.jpg" class="img-ac-0 f-esquerda" alt="Fies"
+									    title="Fies" />
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/enem-5a9e9efed0fc0.jpg" class="img-ac-1 f-esquerda" alt="enem"
+									    title="enem" />
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/enem-5a4e1edf1f767.jpg" class="img-ac-2 f-esquerda" alt="enem"
+									    title="enem" />
+									<div class="conteudo-acessadas">
+										<a href="https://vestibular.brasilescola.uol.com.br/enem/resultado-fies-2018-1-ja-pode-ser-conferido/342201.html" class="top-acessadas top-0">
+											Resultado do Fies 2018/1 está disponível </a>
+										<a href="https://vestibular.brasilescola.uol.com.br/enem/enem-2018-datas-inscricoes-provas-foram-divulgadas/341789.html"
+										    class="top-acessadas top-1">
+											Edital do Enem 2018 deve ser publicado em março </a>
+										<a href="https://vestibular.brasilescola.uol.com.br/enem/resultado-enem-2017/341778.html" class="top-acessadas top-2">
+											Confira o resultado do Enem 2017 </a>
+									</div>
+								</div> -->
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+					<li class="menu-bloco pesquisas-borda">
+						<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br" class="pesquisas-color">
+							Vestibular </a>
+						<div class="menu-col vertibular-col">
+							<ul class="sub">
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/agenda/">
+										Agenda </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/aprovados/">
+										Aprovados </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/atualidades/">
+										Atualidades </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/banco-de-redacoes/">
+										Banco de Redações </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/bolsas-estudo/" target="_blank">
+										Bolsa de Estudo </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/correcoes-provas/">
+										Correções de Vestibular </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/cotas/" target="_blank">
+										Cotas </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/cursinhos-comunitarios/">
+										Cursinhos Comunitários </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/dicas/">
+										Dicas </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/ensino-distancia/">
+										Ensino a Distância </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/estudar-no-exterior/">
+										Estudar no Exterior </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/bolsas-estudo/fies.htm">
+										Fies </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/fuvest/">
+										Fuvest </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/guia-de-profissoes/">
+										Guia de Profissões </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/intercambio/" target="_blank">
+										Intercâmbio </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/noticias/">
+										<b>Notícias Vestibular</b>
+									</a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/orientacao-vocacional/">
+										Orientação Vocacional </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/bolsas-estudo/como-se-desenvolve-pronatec.htm">
+										Pronatec </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/prouni/">
+										ProUni </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/downloads/">
+										Provas e Gabaritos </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/resumos-de-livros/">
+										Resumo de Livros </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/simulado/">
+										Simulado </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/universidades/">
+										Universidades </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/vida-profissional">
+										Vida Profissional </a>
+								</li>
+
+								<!-- <div class="mais-acessadas pesquisas">
+									<h2>MAIS ACESSADAS</h2>
+									<span class="look look-disciplinas"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/canada-5a6611eb4f5f3.jpg" class="img-ac-0 f-esquerda" alt="Canadá"
+									    title="Canadá" />
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/fuvest-5a8ec50dc3add.jpg" class="img-ac-1 f-esquerda" alt="Fuvest"
+									    title="Fuvest" />
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/aprovado-5a65f8bb04af6.jpg" class="img-ac-2 f-esquerda" alt="aprovado"
+									    title="aprovado" />
+									<div class="conteudo-acessadas">
+										<a href="https://vestibular.brasilescola.uol.com.br/estudar-no-exterior/" class="top-acessadas top-0">
+											Dicas para quem quer estudar no exterior! </a>
+										<a href="https://vestibular.brasilescola.uol.com.br/noticias/fuvest-2018-5-a-chamada-aprovados-foi-publicada/342192.html"
+										    class="top-acessadas top-1">
+											Fuvest 2018: veja a 5ª chamada </a>
+										<a href="https://vestibular.brasilescola.uol.com.br/aprovados/" class="top-acessadas top-2">
+											Confira as listas de aprovados nos Vestibulares 2018 </a>
+									</div>
+								</div> -->
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+					<li class="menu-bloco concursos-borda">
+						<a rel="nofollow" href="https://educador.brasilescola.uol.com.br" class="concursos-color">
+							Educador </a>
+						<div class="menu-col educador-col">
+							<ul class="sub">
+								<li>
+									<a rel="nofollow" href="https://educador.brasilescola.uol.com.br/comportamento/">
+										Comportamento </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://educador.brasilescola.uol.com.br/estrategias-ensino/">
+										Estratégia de Ensino </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://educador.brasilescola.uol.com.br/etica/">
+										Ética </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://educador.brasilescola.uol.com.br/gestao-educacional/">
+										Gestão Educacional </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://educador.brasilescola.uol.com.br/orientacao-escolar/">
+										Orientação Escolar </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://educador.brasilescola.uol.com.br/orientacao-escolar/orientacoes-para-pais.htm">
+										Orientações para Pais ou Responsáveis </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://educador.brasilescola.uol.com.br/orientacoes/">
+										Orientações para Professores </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://educador.brasilescola.uol.com.br/politica-educacional/">
+										Política Educacional </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://educador.brasilescola.uol.com.br/sugestoes-pais-professores/">
+										Sugestões para Pais e Professores </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://educador.brasilescola.uol.com.br/trabalho-docente/">
+										Trabalho Docente </a>
+								</li>
+
+								<!-- <div class="mais-acessadas concursos">
+									<h2>MAIS ACESSADAS</h2>
+									<span class="look look-disciplinas"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a590f5d21ba5.jpg" class="img-ac-0 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a590f382c251.jpg" class="img-ac-1 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a590ec57b62a.jpg" class="img-ac-2 f-esquerda" alt="" title=""
+									/>
+									<div class="conteudo-acessadas">
+										<a href="https://educador.brasilescola.uol.com.br/estrategias-ensino/a-importancia-conservacao-dos-oceanos.htm" class="top-acessadas top-0">
+											A importância da conservação dos oceanos. </a>
+										<a href="https://educador.brasilescola.uol.com.br/estrategias-ensino/a-historia-das-lentes.htm" class="top-acessadas top-1">
+											Fique por dentro da história das lentes. </a>
+										<a href="https://educador.brasilescola.uol.com.br/estrategias-ensino/acao-detergente-dos-acidos-sulfonicos.htm" class="top-acessadas top-2">
+											Como falar de ácidos sulfônicos em sala de aula? </a>
+									</div>
+								</div> -->
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+					<li class="menu-bloco especial-borda">
+						<a rel="nofollow" href="https://brasilescola.uol.com.br/o-que-e/" class="especial-color">
+							O que é? </a>
+						<div class="menu-col oque-col">
+							<ul class="sub">
+								<li>
+									<a rel="nofollow" href="https://brasilescola.uol.com.br/o-que-e/biologia/">
+										O que é Biologia? </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://brasilescola.uol.com.br/o-que-e/fisica/">
+										O que é Física? </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://brasilescola.uol.com.br/o-que-e/geografia/">
+										O que é Geografia? </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://brasilescola.uol.com.br/o-que-e/historia/">
+										O que é História? </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://brasilescola.uol.com.br/o-que-e/matematica/">
+										O que é Matemática? </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://brasilescola.uol.com.br/o-que-e/portugues/">
+										O que é Português? </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://brasilescola.uol.com.br/o-que-e/quimica/">
+										O que é Química? </a>
+								</li>
+
+								<!-- <div class="mais-acessadas especial">
+									<h2>MAIS ACESSADAS</h2>
+									<span class="look look-disciplinas"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a5910a1674c8.jpg" class="img-ac-0 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a59107823696.jpg" class="img-ac-1 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a59104ef0806.jpg" class="img-ac-2 f-esquerda" alt="" title=""
+									/>
+									<div class="conteudo-acessadas">
+										<a href="https://brasilescola.uol.com.br/o-que-e/historia/o-que-e-corrupcao.htm" class="top-acessadas top-0">
+											Como surgiu o conceito de corrupção que vemos hoje? </a>
+										<a href="https://brasilescola.uol.com.br/o-que-e/historia/o-que-e-nazismo.htm" class="top-acessadas top-1">
+											Tudo sobre o movimento nazista e afins. Clique já! </a>
+										<a href="https://brasilescola.uol.com.br/o-que-e/biologia/o-que-e-cariotipo.htm" class="top-acessadas top-2">
+											O que é o cariótipo em Genética? É hora de saber! </a>
+									</div>
+								</div> -->
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+					<li class="menu-bloco exercicios-borda">
+						<a rel="nofollow" href="https://exercicios.brasilescola.uol.com.br" class="exercicios-color">
+							Exercícios </a>
+						<div class="menu-col exercicios-col">
+							<ul class="sub">
+								<li>
+									<a rel="nofollow" href="https://exercicios.brasilescola.uol.com.br/biologia/">
+										Exercícios de Biologia </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://exercicios.brasilescola.uol.com.br/fisica/">
+										Exercícios de Física </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://exercicios.brasilescola.uol.com.br/geografia/">
+										Exercícios de Geografia </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://exercicios.brasilescola.uol.com.br/geografia-do-brasil/">
+										Geografia do Brasil </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://exercicios.brasilescola.uol.com.br/gramatica/">
+										Exercícios de Gramática </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://exercicios.brasilescola.uol.com.br/historia-do-brasil/">
+										Exercícios de História do Brasil </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://exercicios.brasilescola.uol.com.br/historia/">
+										Exercícios de História Geral </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://exercicios.brasilescola.uol.com.br/literatura/">
+										Exercícios de Literatura </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://exercicios.brasilescola.uol.com.br/matematica/">
+										Exercícios de Matemática </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://exercicios.brasilescola.uol.com.br/quimica/">
+										Exercícios de Química </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://exercicios.brasilescola.uol.com.br/redacao/">
+										Exercícios de Redação </a>
+								</li>
+
+								<!-- <div class="mais-acessadas exercicios">
+									<h2>MAIS ACESSADAS</h2>
+									<span class="look look-disciplinas"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-59de8d653457a.jpg" class="img-ac-0 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-59de8d54a1bdc.jpg" class="img-ac-1 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-59de8d4646812.jpg" class="img-ac-2 f-esquerda" alt="" title=""
+									/>
+									<div class="conteudo-acessadas">
+										<a href="https://exercicios.brasilescola.uol.com.br/exercicios-geografia/exercicios-sobre-intemperismo.htm" class="top-acessadas top-0">
+											Faça questões que falam a respeito do intemperismo. </a>
+										<a href="https://exercicios.brasilescola.uol.com.br/exercicios-literatura/exercicios-sobre-fernando-pessoa.htm" class="top-acessadas top-1">
+											Averigue seus conhecimentos em relação à Fernando Pessoa. </a>
+										<a href="https://exercicios.brasilescola.uol.com.br/exercicios-historia/exercicios-sobre-teoria-evolucao.htm" class="top-acessadas top-2">
+											Exercite seus estudos sobre a teoria da evolução. </a>
+									</div>
+								</div> -->
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+					<li class="menu-bloco noticias-borda">
+						<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br" class="noticias-color">
+							Monografias </a>
+						<div class="menu-col monografias-col">
+							<ul class="sub">
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/administracao-financas/">
+										Administração e Finanças </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/agricultura-pecuaria/">
+										Agricultura e Pecuária </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/arte-cultura/">
+										Arte e Cultura </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/biologia/">
+										Biologia </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/computacao/">
+										Computação </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/direito/">
+										Direito </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/educacao/">
+										Educação </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/educacao-fisica/">
+										Educação Física </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/enfermagem/">
+										Enfermagem </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/engenharia/">
+										Engenharia </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/filosofia/">
+										Filosofia </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/fisica/">
+										Física </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/geografia/">
+										Geografia </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/historia/">
+										História </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/matematica/">
+										Matemática </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/medicina/">
+										Medicina </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/pedagogia/">
+										Pedagogia </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/psicologia/">
+										Psicologia </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/quimica/">
+										Química </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/religiao/">
+										Religião </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/regras-abnt/">
+										Regras da ABNT </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/saude/">
+										Saúde </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/sociologia/">
+										Sociologia </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br/turismo/">
+										Turismo </a>
+								</li>
+
+								<!-- <div class="mais-acessadas noticias">
+									<h2>MAIS ACESSADAS</h2>
+									<span class="look look-disciplinas"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-59de8d75ceb88.jpg" class="img-ac-0 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-59de8d8204d7b.jpg" class="img-ac-1 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-59de8d9050393.jpg" class="img-ac-2 f-esquerda" alt="" title=""
+									/>
+									<div class="conteudo-acessadas">
+										<a href="https://monografias.brasilescola.uol.com.br/saude/halitose-diagnostico-perspectivas-tratamento.htm" class="top-acessadas top-0">
+											Diagnóstico e perspectivas de tratamento da halitose. </a>
+										<a href="https://monografias.brasilescola.uol.com.br/matematica/a-escola-como-espaco-inclusao-digital.htm" class="top-acessadas top-1">
+											A escola como um espaço de inclusão digital. </a>
+										<a href="https://monografias.brasilescola.uol.com.br/educacao/fatores-que-motivam-desmotivam-na-aprendizagem-lingua-inglesa.htm"
+										    class="top-acessadas top-2">
+											Os prós e contras na aprendizagem da língua inglesa. </a>
+									</div>
+								</div> -->
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+					<li class="menu-bloco empregos-borda">
+						<a rel="nofollow" href="https://escolakids.uol.com.br" target="_blank" class="empregos-color">
+							Escola Kids </a>
+						<div class="menu-col escola-kids">
+							<ul class="sub">
+								<li>
+									<a rel="nofollow" href="http://escolakids.uol.com.br/ciencias/" target="_blank">
+										Ciências </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="http://escolakids.uol.com.br/geografia/" target="_blank">
+										Geografia </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="http://escolakids.uol.com.br/historia/">
+										História </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="http://escolakids.uol.com.br/matematica/" target="_blank">
+										Matemática </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="http://escolakids.uol.com.br/portugues/" target="_blank">
+										Português </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="http://escolakids.uol.com.br/datas-comemorativas/" target="_blank">
+										Datas Comemorativas </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="http://escolakids.uol.com.br/historias/">
+										Histórias para crianças </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="http://escolakids.uol.com.br/jogos/">
+										Jogos </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="http://escolakids.uol.com.br/para-pintar/">
+										Para pintar </a>
+								</li>
+
+								<!-- <div class="mais-acessadas empregos">
+									<h2>MAIS ACESSADAS</h2>
+									<span class="look look-disciplinas"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a591e7eeed3f.jpg" class="img-ac-0 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a591e9e2cd91.jpg" class="img-ac-1 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a591ec72127a.jpg" class="img-ac-2 f-esquerda" alt="" title=""
+									/>
+									<div class="conteudo-acessadas">
+										<a href="http://escolakids.uol.com.br/a-religiao-romana.htm" class="top-acessadas top-0">
+											Atenha-se aos principais deuses da religião romana. </a>
+										<a href="http://escolakids.uol.com.br/abreviacao-vocabular.htm" class="top-acessadas top-1">
+											Quando devo fazer a abreviação vocabular? </a>
+										<a href="http://escolakids.uol.com.br/cigarra.htm" class="top-acessadas top-2">
+											Descubra os motivos do famoso canto da cigarra. </a>
+									</div>
+								</div> -->
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+					<li class="menu-bloco monografias-borda">
+						<a rel="nofollow" href="https://brasilescola.uol.com.br/videos/" class="monografias-color">
+							Vídeos </a>
+						<div class="menu-col videos-col">
+							<ul class="sub">
+								<li>
+									<a rel="nofollow" href="//brasilescola.uol.com.br/videos/biologia">
+										Videoaulas de Biologia </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="//brasilescola.uol.com.br/videos/espanhol">
+										Videoaulas de Espanhol </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="//brasilescola.uol.com.br/videos/fisica">
+										Videoaulas de Física </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="//brasilescola.uol.com.br/videos/historia">
+										Videoaulas de História </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="//brasilescola.uol.com.br/videos/ingles">
+										Videoaulas de Inglês </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="//brasilescola.uol.com.br/videos/matematica">
+										Videoaulas de Matemática </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="//brasilescola.uol.com.br/videos/portugues">
+										Videoaulas de Português </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="//brasilescola.uol.com.br/videos/quimica">
+										Videoaulas de Química </a>
+								</li>
+
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+					<li class="menu-bloco canais-borda">
+						<a rel="nofollow" href="https://brasilescola.uol.com.br/canais/" class="canais-color">
+							+ Canais </a>
+						<div class="menu-col canais-col">
+							<ul class="sub">
+								<li>
+									<a rel="nofollow" href="https://educador.brasilescola.uol.com.br">
+										Educador </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="http://empregos.brasilescola.com" target="_blank">
+										Empregos </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br/enem/">
+										Enem </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://exercicios.brasilescola.uol.com.br">
+										Exercícios </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://guerras.brasilescola.uol.com.br">
+										Guerras </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://meuartigo.brasilescola.uol.com.br">
+										Meu Artigo </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://monografias.brasilescola.uol.com.br">
+										Monografias </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://brasilescola.uol.com.br/noticias/">
+										Notícias </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://vestibular.brasilescola.uol.com.br">
+										Vestibular </a>
+								</li>
+								<li>
+									<a rel="nofollow" href="https://brasilescola.uol.com.br/videos/">
+										Vídeos </a>
+								</li>
+
+								<!-- <div class="mais-acessadas canais">
+									<h2>MAIS ACESSADAS</h2>
+									<span class="look look-disciplinas"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/educador-5a102e18d3946.png" class="img-ac-0 f-esquerda" alt="Educador "
+									    title="Educador " />
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/exercicios-brasil-escola-5a591c4cc23fb.jpg" class="img-ac-1 f-esquerda"
+									    alt="Exercícios Brasil Escola " title="Exercícios Brasil Escola " />
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/guerras-5a591bcb9846e.jpg" class="img-ac-2 f-esquerda" alt="Guerras"
+									    title="Guerras" />
+									<div class="conteudo-acessadas">
+										<a href="http://educador.brasilescola.com/" class="top-acessadas top-0">
+											Conheça o nosso canal para professores! </a>
+										<a href="http://exercicios.brasilescola.com/" class="top-acessadas top-1">
+											Teste seus conhecimentos com nossos exercícios. </a>
+										<a href="https://guerras.brasilescola.uol.com.br" class="top-acessadas top-2">
+											Curiosidades sobre conflitos históricos. Confira! </a>
+									</div>
+								</div> -->
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+				</ul>
+				<span class="clear"></span>
+			</div>
+		</div>
+	</div>
+
+	<!-- <header id="cabecalho-f" class="">
+		<div class="centro ">
+
+			<h1 style="float: left;">
+				<a href="https://monografias.brasilescola.uol.com.br/">
+					<img src="https://monografias.brasilescola.uol.com.br/assets/images/cabecalho/logo.png" class="logo" alt="Monografias Brasil Escola"
+					    title="Monografias Brasil Escola">
+				</a>
+			</h1>
+			<div class="conteudo-cabecalho f-direita">
+				<form class="login f-esquerda" action="https://brasilescola.uol.com.br/cadastro/login/?return=https://monografias.brasilescola.com/"
+				    method="post">
+					<div class="cab-email f-esquerda">
+						<label>E-mail</label>
+						<input type="text" name="login" required="required">
+						<a href="https://brasilescola.uol.com.br/cadastro/">Cadastre-se</a>
+					</div>
+					<div class="cab-senha f-esquerda">
+						<label>Senha</label>
+						<input type="password" name="senha" required="required">
+						<input type="submit" value="OK">
+						<a href="https://brasilescola.uol.com.br/cadastro/recuperar-senha.htm">Esqueci a senha</a>
+					</div>
+				</form>
+				<div class="f-esquerda">
+					<a href="https://www.facebook.com/v2.10/dialog/oauth?client_id=373234989386443&state=c036afe9ae74cae4beaf34d633f63fb6&response_type=code&sdk=php-sdk-5.6.1&redirect_uri=https%3A%2F%2Fbrasilescola.uol.com.br%2Fcadastro%2Floginfacebook%2F&scope=email%2Cpublic_profile%2Cuser_birthday%2Cuser_location"
+					    class="cab-facebook f-esquerda">
+						Entrar com Facebook
+					</a>
+					<a href="https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=https%3A%2F%2Fbrasilescola.uol.com.br%2Fcadastro%2Flogin-gplus&client_id=759766362615-vb2b8bg6ok424ubornsmuo8173t90f7q.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&access_type=offline&approval_prompt=force&state=https%253A%252F%252Fmonografias.brasilescola.uol.com.br%252F%252F#"
+					    class="cab-gplus f-esquerda">
+						Entrar com Google
+					</a>
+				</div>
+
+
+				<div class="separa f-esquerda"></div>
+				<div class="pesquisa-padrao f-esquerda">
+					<img src="https://monografias.brasilescola.uol.com.br/assets/images/cabecalho/pesquisar.png" alt="pesquisar">
+					<form action="https://monografias.brasilescola.uol.com.br/busca/" method="GET">
+						<input type="text" placeholder="Procure no site" name="q" required="required">
+						<input type="submit" value="">
+					</form>
+				</div>
+			</div>
+		</div>
+	</header> -->
+	<header id="cabecalho-f">
+	<div class="centro">
+		<h1>
+			<a href="https://brasilescola.uol.com.br/">
+				<img src="https://monografias.brasilescola.uol.com.br/assets/images/cabecalho/logo.png" class="logo" alt="Brasil Escola" title="Brasil Escola">
+			</a>
+
+		</h1>
+
+		<div class="pesquisa-padrao f-esquerda">
+			<form action="https://brasilescola.uol.com.br/busca/" method="get">
+				<input type="text" placeholder="Procure no site"  name="q" id="q">
+				<input type="submit" style="display:block" value="">
+			</form>
+		</div>
+
+		<div class="conteudo-cabecalho f-direita">
+			<form class="login f-esquerda" action="https://brasilescola.uol.com.br/cadastro/login?return=https://brasilescola.uol.com.br/#painel"
+			    method="post">
+				<div class="cab-email f-esquerda">
+					<input placeholder="E-mail" type="text" onfocus="this.value = '';" required="true" value="" name="login">
+					<a href="https://brasilescola.uol.com.br/cadastro/">Cadastre-se</a>
+				</div>
+				<div class="cab-senha f-esquerda">
+					<input placeholder="Senha" type="password" onfocus="this.value = '';" type="password" name="senha" required="true">
+					<input type="submit" value="OK" style="margin-left: -4px;">
+					<a href="https://brasilescola.uol.com.br/cadastro/recuperar-senha.htm">Esqueci a senha</a>
+				</div>
+			</form>
+
+			
+			<div class="answer_or">ou</div>
+
+			<div class="f-esquerda">
+				<a href="https://www.facebook.com/v2.10/dialog/oauth?client_id=373234989386443&state=e7ded131864a32629af301d7a286a761&response_type=code&sdk=php-sdk-5.6.1&redirect_uri=https%3A%2F%2Fbrasilescola.uol.com.br%2Fcadastro%2Floginfacebook%2F&scope=email%2Cpublic_profile%2Cuser_birthday%2Cuser_location"
+				    class="cab-facebook f-esquerda social-icons"></a>
+				<a href="https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=https%3A%2F%2Fbrasilescola.uol.com.br%2Fcadastro%2Flogin-gplus&client_id=759766362615-vb2b8bg6ok424ubornsmuo8173t90f7q.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&access_type=offline&approval_prompt=force"
+				    class="cab-gplus f-esquerda social-icons"></a>
+			</div>
+			
+			
+		</div>
+
+	</div>
+
+</header>
+
+	<header id="cabecalho-r">
+		<div class="centro">
+			<a href="https://monografias.brasilescola.uol.com.br/">
+				<img src="https://monografias.brasilescola.uol.com.br/assets/images/cabecalho/logo-responsivo.png" class="logo" alt="Monografias Brasil Escola"
+				    title="Monografias Brasil Escola">
+			</a>
+			<div class="f-direita">
+				<nav>
+					<ul>
+						<li class="canais-ini">
+							<a href="#" class="canais">Menu</a>
+							<!--							<ul class="fallback">
+								<li><a href="#">monografias</a></li>
+								<li><a href="#">biológicas</a></li>
+								<li><a href="#">exatas</a></li>
+								<li><a href="#">humanas</a></li>
+								<li><a href="#">mais avaliadas</a></li>
+								<li><a href="#">meu artigo</a></li>
+								<li><a href="#">cursos online</a></li>
+								<li><a href="#">shopping</a></li>
+							</ul>-->
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="topo f-direita">
+				Topo
+			</div>
+			<div class="f-direita">
+				<div class="s-usuario">
+					Login/Registro
+				</div>
+				<div class="login-rol">
+					<form action="https://brasilescola.uol.com.br/cadastro/login/?return=https://monografias.brasilescola.com/" method="post">
+						<label>E-mail</label>
+						<br>
+						<input type="text" name="login" value="" required="required">
+						<br>
+						<label>Senha</label>
+						<br>
+						<input type="password" name="senha" value="" required="required">
+						<input type="button" value="OK">
+					</form>
+					<a href="https://brasilescola.uol.com.br/cadastro/" class="small">
+						Cadastre-se
+					</a>
+					<a href="https://brasilescola.uol.com.br/cadastro/recuperar-senha.htm" class=" esqueci small">
+						Esqueci a senha
+					</a>
+					<br>
+					<a href="https://www.facebook.com/v2.10/dialog/oauth?client_id=373234989386443&state=c036afe9ae74cae4beaf34d633f63fb6&response_type=code&sdk=php-sdk-5.6.1&redirect_uri=https%3A%2F%2Fbrasilescola.uol.com.br%2Fcadastro%2Floginfacebook%2F&scope=email%2Cpublic_profile%2Cuser_birthday%2Cuser_location"
+					    class="cab-facebook">
+						Entrar com Facebook
+					</a>
+					<a href="#" class="cab-gplus">
+						Entrar com Google
+					</a>
+				</div>
+			</div>
+			<div class="pesquisar-rol f-direita">
+				<img src="https://monografias.brasilescola.uol.com.br/assets/images/cabecalho/pesquisar.png" alt="pesquisar">
+				<form class="pesquisar" action="https://monografias.brasilescola.uol.com.br/busca/" method="GET">
+					<input type="text" placeholder="Procure no site" class="pesquisa-rol" name="q" required="required">
+					<input type="submit" value="">
+				</form>
+			</div>
+	</header>
+	<div class="conteudo aline">
+
+		<!-- <div class="bloco-fixo-esquerda">
+			<div style="width: 160px; display: table;">
+				<!-- Home - Arranha Céu - 160x600 (Esquerdo) 
+				<div style="width: 160px; height: 600px; position: fixed;">
+					<!-- 160x600 - 1 - UOL AD 
+					<div id="banner-160x600-area">
+						<script>
+							window.uolads && window.uolads.push({
+								id: "banner-160x600-area"
+							});
+						</script>
+					</div>
+				</div>
+			</div>
+		</div> -->
+
+		<div class="conteudo-principal">
+			<div class="menu">
+				<ul class="menu-item">
+					<li class="monografias-borda">
+						<a href="https://monografias.brasilescola.uol.com.br" class="monografias-topo">
+							Ciências Agrárias e Biológicas </a>
+
+						<div class="menu-col monografias-topo">
+							<ul class="sub sub-monografia">
+
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/agricultura-pecuaria/">
+										Agricultura e Pecuária </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/biologia/">
+										Ciências Biológicas </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/biologia/ecologia-saude.htm">
+										Ecologia </a>
+								</li>
+
+								<div class="mais-acessadas">
+									<h2 class="monografias-color">MAIS ACESSADAS</h2>
+									<span class="look look-monografias"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a2e641ff090d.jpg" class="img-ac-0 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a2e78cf9e07d.jpg" class="img-ac-1 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a2e8466cda80.jpg" class="img-ac-2 f-esquerda" alt="" title=""
+									/>
+									<div class="conteudo-acessadas">
+										<a href="https://monografias.brasilescola.uol.com.br/biologia/a-clonagem.htm" class="top-acessadas top-0">
+											A clonagem de seres humanos deve ser proibida? </a>
+										<a href="https://monografias.brasilescola.uol.com.br/agricultura-pecuaria/adubo-minhocas.htm" class="top-acessadas top-1">
+											As vantagens do composto produzido pelas minhocas. </a>
+										<a href="https://monografias.brasilescola.uol.com.br/saude/o-beneficio-pilates-no-tratamento-pacientes-com-fibromialgia.htm"
+										    class="top-acessadas top-2">
+											Benefícios da prática do pilates para a temida fibromialgia. </a>
+									</div>
+								</div>
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+
+					<li class="monografias-borda">
+						<a href="https://monografias.brasilescola.uol.com.br" class="monografias-topo">
+							Ciências da Saúde </a>
+
+						<div class="menu-col monografias-topo">
+							<ul class="sub sub-monografia">
+
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/saude/">
+										Saúde </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/medicina/">
+										Medicina </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/enfermagem/">
+										Enfermagem </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/medicina/odontologia.htm">
+										Odontologia </a>
+								</li>
+
+								<div class="mais-acessadas">
+									<h2 class="monografias-color">MAIS ACESSADAS</h2>
+									<span class="look look-monografias"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a3251ca548a4.jpg" class="img-ac-0 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a325a5cbf854.jpg" class="img-ac-1 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a3259573ca4e.jpg" class="img-ac-2 f-esquerda" alt="" title=""
+									/>
+									<div class="conteudo-acessadas">
+										<a href="https://monografias.brasilescola.uol.com.br/saude/estudo-qualidade-vida-enfermeiras-distrito-sanitario-.htm" class="top-acessadas top-0">
+											Há qualidade de vida no trabalho das enfermeiras no Brasil? </a>
+										<a href="https://monografias.brasilescola.uol.com.br/medicina/alergia.htm" class="top-acessadas top-1">
+											Por que profissionais da saúde devem fica atentos à alergias? </a>
+										<a href="https://monografias.brasilescola.uol.com.br/saude/patologia-diagnostico-tratamento-mixoma-cardiaco.htm" class="top-acessadas top-2">
+											O diagnóstico e tratamento do Mixoma Cardíaco. </a>
+									</div>
+								</div>
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+
+					<li class="monografias-borda">
+						<a href="https://monografias.brasilescola.uol.com.br" class="monografias-topo">
+							Ciências Exatas e da Terra </a>
+
+						<div class="menu-col monografias-topo">
+							<ul class="sub sub-monografia">
+
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/matematica/">
+										Matemática </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/fisica/">
+										Física </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/computacao/">
+										Computação </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/computacao/hardware.htm">
+										Hardware </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/computacao/redes-internet.htm">
+										Redes e Internet </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/computacao/software-programacao.htm">
+										Software e Programação </a>
+								</li>
+
+								<div class="mais-acessadas">
+									<h2 class="monografias-color">MAIS ACESSADAS</h2>
+									<span class="look look-monografias"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/a-inclusao-digital-pode-acontecer-na-escola-5a326141ccbf2.jpg"
+									    class="img-ac-0 f-esquerda" alt="A inclusão digital pode acontecer na escola." title="A inclusão digital pode acontecer na escola."
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/o-jornalismo-se-reinventou-na-web-5a326da2152c8.jpg" class="img-ac-1 f-esquerda"
+									    alt="O jornalismo se reinventou na web. " title="O jornalismo se reinventou na web. " />
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/fisica-5a3269da1884e.jpg" class="img-ac-2 f-esquerda" alt="Física "
+									    title="Física " />
+									<div class="conteudo-acessadas">
+										<a href="https://monografias.brasilescola.uol.com.br/computacao/a-importancia-privacidade-na-internet.htm" class="top-acessadas top-0">
+											Saiba mais sobre a importância da privacidade na internet. </a>
+										<a href="https://monografias.brasilescola.uol.com.br/computacao/intermidias-os-infiltrados-ciberjornalismo.htm" class="top-acessadas top-1">
+											Como as intermídias está inserida no ciberjornalismo? </a>
+										<a href="https://monografias.brasilescola.uol.com.br/fisica/instrumentos-opticos.htm" class="top-acessadas top-2">
+											Um pouco mais sobre os instrumentos ópticos e suas funções. </a>
+									</div>
+								</div>
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+
+					<li class="monografias-borda">
+						<a href="https://monografias.brasilescola.uol.com.br" class="monografias-topo">
+							Ciências Humanas </a>
+
+						<div class="menu-col monografias-topo">
+							<ul class="sub sub-monografia">
+
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/educacao/">
+										Educação </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/educacao-fisica/">
+										Educação Física </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/filosofia/">
+										Filosofia </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/geografia/">
+										Geografia </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/historia/">
+										História </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/pedagogia/">
+										Pedagogia </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/psicologia/">
+										Psicologia </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/religiao/">
+										Religião </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/sociologia/">
+										Sociologia </a>
+								</li>
+
+								<div class="mais-acessadas">
+									<h2 class="monografias-color">MAIS ACESSADAS</h2>
+									<span class="look look-monografias"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a3272ba3089f.jpg" class="img-ac-0 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a327265d995e.jpg" class="img-ac-1 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a3271a92de80.jpg" class="img-ac-2 f-esquerda" alt="" title=""
+									/>
+									<div class="conteudo-acessadas">
+										<a href="https://monografias.brasilescola.uol.com.br/psicologia/anorexia.htm" class="top-acessadas top-0">
+											As verdades que poucos sabem sobre a famosa anorexia. </a>
+										<a href="https://monografias.brasilescola.uol.com.br/religiao/maconaria.htm" class="top-acessadas top-1">
+											Afinal, o que é maçonaria e quais os seus princípios? </a>
+										<a href="https://monografias.brasilescola.uol.com.br/geografia/a-crise-energiano-brasil.htm" class="top-acessadas top-2">
+											Veja algumas reflexões sobre a temida crise de energia no Brasil. </a>
+									</div>
+								</div>
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+
+					<li class="monografias-borda">
+						<a href=" https://monografias.brasilescola.uol.com.br" class="monografias-topo">
+							Ciências Sociais Aplicadas </a>
+
+						<div class="menu-col monografias-topo">
+							<ul class="sub sub-monografia">
+
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/direito/">
+										Direito </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/administracao-financas/marketing.htm">
+										Marketing </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/administracao-financas/economia.htm">
+										Economia </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/turismo/">
+										Turismo </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/administracao-financas/">
+										Administração e Finanças </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/administracao-financas/contabilidade.htm">
+										Contabilidade </a>
+								</li>
+
+								<div class="mais-acessadas">
+									<h2 class="monografias-color">MAIS ACESSADAS</h2>
+									<span class="look look-monografias"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a3278af29709.jpg" class="img-ac-0 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a327c711940a.jpg" class="img-ac-1 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a339aa9a8f37.jpg" class="img-ac-2 f-esquerda" alt="" title=""
+									/>
+									<div class="conteudo-acessadas">
+										<a href="https://monografias.brasilescola.uol.com.br/administracao-financas/televisao-midia.htm" class="top-acessadas top-0">
+											Por que hoje são necessários esforços para não assistir TV? </a>
+										<a href="https://monografias.brasilescola.uol.com.br/administracao-financas/as-classes-sociais-as-desigualdade.htm" class="top-acessadas top-1">
+											Questões culturais e econômicas que levaram à desigualdade social. </a>
+										<a href="https://monografias.brasilescola.uol.com.br/comunicacao-marketing/luz-musica-acao-os-agentes-contemporaneos-teatro-musical-no-brasil.htm"
+										    class="top-acessadas top-2">
+											Conheça mais dos aspectos que regem o teatro contemporâneo no Brasil. </a>
+									</div>
+								</div>
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+
+					<li class="monografias-borda">
+						<a href="https://monografias.brasilescola.uol.com.br/engenharia/" class="monografias-topo">
+							Engenharias </a>
+
+						<div class="menu-col monografias-topo">
+							<ul class="sub sub-monografia">
+
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/engenharia/engenharia-civil.htm">
+										Engenharia Civil </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/engenharia/engenharia-alimentos.htm">
+										Engenharia dos Alimentos </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/engenharia/engenharia-eletrica.htm">
+										Engenharia Elétrica </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/engenharia/engenharia-mecanica.htm">
+										Engenharia Mecânica </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/engenharia/engenharia-quimica.htm">
+										Engenharia Química </a>
+								</li>
+
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+
+					<li class="monografias-borda">
+						<a href="https://monografias.brasilescola.uol.com.br" class="monografias-topo">
+							Linguística, Letras e Artes </a>
+
+						<div class="menu-col monografias-topo">
+							<ul class="sub sub-monografia">
+
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/arte-cultura/">
+										Arte e Cultura </a>
+								</li>
+
+								<div class="mais-acessadas">
+									<h2 class="monografias-color">MAIS ACESSADAS</h2>
+									<span class="look look-monografias"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a339f4271f08.jpg" class="img-ac-0 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a33a02cbebb9.jpg" class="img-ac-1 f-esquerda" alt="" title=""
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a33a22887bb5.jpg" class="img-ac-2 f-esquerda" alt="" title=""
+									/>
+									<div class="conteudo-acessadas">
+										<a href="https://monografias.brasilescola.uol.com.br/arte-cultura/100-dicas-para-uma-vida-melhor.htm" class="top-acessadas top-0">
+											100 dicas para uma vida melhor. </a>
+										<a href="https://monografias.brasilescola.uol.com.br/arte-cultura/a-representacao-mulher-negra-na-teledramaturgia-brasileira.htm"
+										    class="top-acessadas top-1">
+											A representação da mulher negra na teledramaturgia brasileira. </a>
+										<a href="https://monografias.brasilescola.uol.com.br/arte-cultura/o-desenho-revela-uma-vida.htm" class="top-acessadas top-2">
+											Através da arte mostramos o que estamos sentindo e pensando. Entenda! </a>
+									</div>
+								</div>
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+
+					<li class="monografias-borda">
+						<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/" class="monografias-topo">
+							Regras da ABNT </a>
+
+						<div class="menu-col monografias-topo">
+							<ul class="sub sub-monografia">
+
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/artigo-cientifico.htm">
+										Artigo Científico </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/citacoes.htm">
+										Citações </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/como-fazer-citacoes-bibliograficas.htm">
+										Citações bibliográficas </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/curriculo-lattes.htm">
+										Currículo Lattes </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/dissertacao-tese-tracos-que-as-definem.htm">
+										Dissertação e Tese </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/entrevista.htm">
+										Entrevista </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/metodos-pesquisa.htm">
+										Métodos de pesquisa </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/pesquisa-cientifica.htm">
+										Pesquisa científica </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/projeto-pesquisa.htm">
+										Projeto de Pesquisa </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/resenha-critica.htm">
+										Resenha Crítica </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/trabalho-conclusao-cursotcc-artigo-cientifico.htm">
+										Trabalho de Conclusão de Curso - TCC: Artigo Científico </a>
+								</li>
+								<li>
+									<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/trabalho-conclusao-cursotcc-monografia.htm">
+										Trabalho de Conclusão de Curso - TCC: Monografia </a>
+								</li>
+
+								<div class="mais-acessadas">
+									<h2 class="monografias-color">MAIS ACESSADAS</h2>
+									<span class="look look-monografias"></span>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/as-citacoes-nos-trabalhos-academicos-devem-seguir-regras-55e0d28a43f47.jpg"
+									    class="img-ac-0 f-esquerda" alt="As citações nos trabalhos acadêmicos devem seguir regras. " title="As citações nos trabalhos acadêmicos devem seguir regras. "
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-importante-escrever-curriculo-lattes-maneira-correta-55e0d306e2ce6.jpg"
+									    class="img-ac-1 f-esquerda" alt="É importante escrever o currículo lattes da maneira correta." title="É importante escrever o currículo lattes da maneira correta."
+									/>
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/pesquisa-necessita-organizacao-55e0d397b7280.jpg" class="img-ac-2 f-esquerda"
+									    alt="Pesquisa necessita de organização! " title="Pesquisa necessita de organização! " />
+									<div class="conteudo-acessadas">
+										<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/citacoes.htm" class="top-acessadas top-0">
+											Entenda a importância das citações. </a>
+										<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/curriculo-lattes.htm" class="top-acessadas top-1">
+											Você sabe redigir um currículo corretamente? </a>
+										<a href="https://monografias.brasilescola.uol.com.br/regras-abnt/pesquisa-cientifica.htm" class="top-acessadas top-2">
+											Aprenda a organizar uma pesquisa científica. </a>
+									</div>
+								</div>
+							</ul>
+							<span class="clear"></span>
+						</div>
+					</li>
+
+				</ul>
+				<span class="clear"></span>
+			</div>
+			<!-- Home - Super - 728x90 -->
+			<div class="publicidade-cima">
+				<div class="box-publicidade-topo">
+					<!-- 728x90 - 1 - UOL AD -->
+					<div id="banner-728x90-area">
+						<script>
+							window.uolads && window.uolads.push({
+								id: "banner-728x90-area"
+							});
+						</script>
+					</div>
+				</div>
+			</div>
+
+			<div class="bloco">
+				<div class="grid-1">
+					<div class="noticias-full" style="position: relative;">
+						<div class="bloco-bottom">
+							<div id="sliderb_container" class="slider-noticias-home">
+								<!-- Slides Container -->
+								<div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 630px; height: 260px; overflow: hidden;">
+									<div>
+										<h2 class="monografias h2_tv">
+											Educação </h2>
+										<img u=image src="http://brasilescola.uol.com.br/upload/chamadas/-5ab1840ebc6f4.jpg" alt="" title="" />
+										<div u="thumb">
+											<a href="https://monografias.brasilescola.uol.com.br/educacao/impacto-relacao-entre-familia-escola-no-desempenho-academico-aluno.htm"
+											    class="omnia-tv-titulo-a">
+												Existem aspectos positivos e negativos que envolvem a relação entre a família e o desempenho escolar. </a>
+											<div class="omnia-tema-tv notes">
+												Educação </div>
+										</div>
+									</div>
+									<div>
+										<h2 class="monografias h2_tv">
+											Direito </h2>
+										<img u=image src="https://brasilescola.uol.com.br/upload/chamadas/-5a9f0786f0ab4.jpg" alt="" title="" />
+										<div u="thumb">
+											<a href="https://monografias.brasilescola.uol.com.br/direito/o-trafico-internacional-mulheres-para-fins-exploracao-sexual-apontamentos-perpesctivas.htm"
+											    class="omnia-tv-titulo-a">
+												Quais são os principais fatores circunstanciais que impulsionam o tráfico internacional de mulheres? </a>
+											<div class="omnia-tema-tv notes">
+												Direito </div>
+										</div>
+									</div>
+									<div>
+										<h2 class="monografias h2_tv">
+											Psicologia </h2>
+										<img u=image src="https://brasilescola.uol.com.br/upload/chamadas/-5a9f089013ea7.jpg" alt="" title="" />
+										<div u="thumb">
+											<a href="https://monografias.brasilescola.uol.com.br/psicologia/doutor-estou-com-medo-fantasias-criancas-hospitalizadas.htm"
+											    class="omnia-tv-titulo-a">
+												Qual é o papel da psicologia no auxílio de superação do medo de crianças que estão hospitalizadas? </a>
+											<div class="omnia-tema-tv notes">
+												Psicologia </div>
+										</div>
+									</div>
+								</div>
+								<div u="thumbnavigator" class="thumbnavigator">
+									<div class="bg-slider-description">
+									</div>
+									<!-- Thumbnail Item Skin Begin -->
+									<div u="slides">
+										<div u="prototype" class="box-marcador-paginacao">
+											<div u="thumbnailtemplate" class="marcador-paginacao"></div>
+
+											<div style="margin: 40px 0 0 10px;color: #ffffff;">
+												<span class="notes"></span>
+												<span>
+
+												</span>
+											</div>
+
+										</div>
+									</div>
+									<!-- Thumbnail Item Skin End -->
+								</div>
+								<!--#endregion ThumbnailNavigator Skin End -->
+
+								<!-- bullet navigator container -->
+								<div u="navigator" class="jssorb01" style="bottom: 16px; right: 10px;">
+									<!-- bullet navigator item prototype -->
+									<div u="prototype"></div>
+								</div>
+								<!--#endregion Bullet Navigator Skin End -->
+
+								<!-- Arrow Left -->
+								<span u="arrowleft" class="jssora05l" style="top: 123px; left: 8px;">
+								</span>
+								<!-- Arrow Right -->
+								<span u="arrowright" class="jssora05r" style="top: 123px; right: 8px;">
+								</span>
+							</div>
+
+							<div class="publicidade-pequena publicidade-lado-slider">
+								<!-- Home - Island 1 - 300x250 -->
+								<div class="publicidade-pequena">
+									<div style='height:250px; width:300px;'>
+										<!-- 300x250 - 1 - UOL AD -->
+										<div id="banner-300x250-area">
+											<script>
+												window.uolads && window.uolads.push({
+													id: "banner-300x250-area"
+												});
+											</script>
+										</div>
+									</div>
+								</div>
+							</div>
+							<span class="clear"></span>
+						</div>
+
+
+
+						<div class="bloco-header bloco-geral-materias">
+							<div class="bloco-materia-img-2">
+								<div class="imagem">
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/educacao-inclusiva-5a5cdc15c44a5.jpg" alt="Educação inclusiva"
+									    title="Educação inclusiva" />
+								</div>
+								<div class="materia">
+									<h2>
+										Educação inclusiva </h2>
+									<a href="https://monografias.brasilescola.uol.com.br/pedagogia/as-tecnologias-educacao-alunos-surdos.htm">
+										Saiba como a tecnologia pode auxiliar na inclusão de alunos surdos. </a>
+									<ul>
+										<li>
+											<span class="notes"></span>
+											<span>
+												Pedagogia </span>
+										</li>
+										<li>
+											<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fpedagogia%2Fas-tecnologias-educacao-alunos-surdos.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')"
+											    class="face"></a>
+											<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Saiba como a tecnologia pode auxiliar na inclusão de alunos surdos.&url=https://monografias.brasilescola.uol.com.br/pedagogia/as-tecnologias-educacao-alunos-surdos.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')"
+											    class="tw"></a>
+										</li>
+									</ul>
+								</div>
+								<span class="clear"></span>
+							</div>
+							<div class="bloco-materia-img-2">
+								<div class="imagem">
+									<img src="https://brasilescola.uol.com.br/upload/chamadas/-5a5cdcb14e9d0.jpg" alt="" title="" />
+								</div>
+
+								<div class="materia">
+									<h2>
+										Imunização </h2>
+									<a href="https://monografias.brasilescola.uol.com.br/enfermagem/pontos-relevantes-para-funcionamento-adequado-uma-sala-vacinas.htm">
+										Quais os pontos relevantes para o funcionamento de uma sala de vacinas? </a>
+									<ul>
+										<li>
+											<span class="notes"></span>
+											<span>
+												Enfermagem </span>
+										</li>
+										<li>
+											<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fenfermagem%2Fpontos-relevantes-para-funcionamento-adequado-uma-sala-vacinas.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')"
+											    class="face"></a>
+											<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Quais os pontos relevantes para o funcionamento de uma sala de vacinas?&url=https://monografias.brasilescola.uol.com.br/enfermagem/pontos-relevantes-para-funcionamento-adequado-uma-sala-vacinas.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')"
+											    class="tw"></a>
+											<span class="clear"></span>
+										</li>
+									</ul>
+								</div>
+
+							</div>
+							<span class="clear"></span>
+						</div>
+
+
+
+
+
+
+
+
+
+
+						<span class="clear"></span>
+
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<div class="br-grid-1 br-grid-ultimo">
+
+					</div>
+					<span class="clear"></span>
+					<div class="grid-publicar">
+						<div class="pub-grid-primeiro">
+							<div class="bloco-botao-publicar-imagem">
+								<div class="publicar-imagem megafone">
+									<span></span>
+								</div>
+								</span>
+								<div class="bloco-botao-publicar-texto">
+									<a href="https://monografias.brasilescola.uol.com.br/publicar-monografia/">
+										<div class="publicar-paragrafo">
+											<h2 class="publicar-texto-1">publicar</h2>
+											<h3 class="publicar-texto-2">monografia</h3>
+										</div>
+									</a>
+								</div>
+								<span class="clear"></span>
+							</div>
+						</div>
+						<div class="pub-grid-ultimo">
+							<div class="bloco-botao-publicar-imagem">
+								<div class="publicar-imagem interrogacao">
+									<span></span>
+								</div>
+								<div class="bloco-botao-publicar-texto bloco-botao-publicar-texto-coloracao">
+									<a href="https://monografias.brasilescola.uol.com.br/ajuda/">
+										<div class="publicar-paragrafo">
+											<h2 class="publicar-texto-1">saiba como</h2>
+											<h3 class="publicar-texto-2">publicar</h3>
+										</div>
+									</a>
+								</div>
+								<span class="clear"></span>
+							</div>
+						</div>
+						<span class="clear"></span>
+					</div>
+					<span class="clear"></span>
+					<span class="destaques-title">
+						<h2>
+							ÚLTIMOS ARTIGOS </h2>
+						<span class="clear"></span>
+					</span>
+					<span class="border-2"></span>
+					<div class="br-grid-2 br-grid-primeiro">
+						<div class="br-grid-1 br-grid-primeiro">
+							<div class="br-grid-1-publicidade">
+								<!-- Home - Island 3 - 300x250 -->
+								<span class="texto-publicidade">
+									PUBLICIDADE
+								</span>
+								<div style='height:250px; width:300px;'>
+									<!-- 300x250 - 3 - UOL AD -->
+									<div id="banner-300x250-3-area">
+										<script>
+											window.uolads && window.uolads.push({
+												id: "banner-300x250-3-area"
+											});
+										</script>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="br-grid-1 br-grid-ultimo">
+							<div class="bloco-materia-img">
+								<h2 class="monografias-page">
+									Matemática </h2>
+								<img src="https://brasilescola.uol.com.br/upload/chamadas/-598b79392d02b.png" class="materia-imagem-pequena f-esquerda" alt=""
+								    title="">
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/matematica/a-educacao-inclusiva-ensino-matematica-para-portadores-deficiencia-visual.htm">
+										O ensino da matemática para pessoas com deficiência visual. </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fmatematica%2Fa-educacao-inclusiva-ensino-matematica-para-portadores-deficiencia-visual.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=O ensino da matemática para pessoas com deficiência visual.&url=https://monografias.brasilescola.uol.com.br/matematica/a-educacao-inclusiva-ensino-matematica-para-portadores-deficiencia-visual.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/matematica/a-educacao-inclusiva-ensino-matematica-para-portadores-deficiencia-visual.htm"
+										    class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="bloco-materia">
+								<h2 class="monografias-page">
+									Comunicação & Marketing </h2>
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/comunicacao-marketing/luz-musica-acao-os-agentes-contemporaneos-teatro-musical-no-brasil.htm">
+										Luz, música e ação: os agentes contemporâneos de teatro musical no Brasil. </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fcomunicacao-marketing%2Fluz-musica-acao-os-agentes-contemporaneos-teatro-musical-no-brasil.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Luz, música e ação: os agentes contemporâneos de teatro musical no Brasil.&url=https://monografias.brasilescola.uol.com.br/comunicacao-marketing/luz-musica-acao-os-agentes-contemporaneos-teatro-musical-no-brasil.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/comunicacao-marketing/luz-musica-acao-os-agentes-contemporaneos-teatro-musical-no-brasil.htm"
+										    class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="br-grid-1 br-grid-ultimo">
+						<div class="bloco-materia">
+							<h2 class="monografias-page">
+								Pedagogia </h2>
+							<div class="materia-conteudo">
+								<a href="https://monografias.brasilescola.uol.com.br/pedagogia/a-importancia-da-avaliacao-de-aprendizagem-como-pratica-reflexiva.htm">
+									Compreenda a importância da avaliação de aprendizagem como prática reflexiva. </a>
+							</div>
+							<div class="compartilhar-materia monografias-page-borda">
+								<div class="conteudo-compartilhar monografias-page">
+									COMPARTILHE
+									<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fpedagogia%2Fa-importancia-da-avaliacao-de-aprendizagem-como-pratica-reflexiva.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+									</a>
+									<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Compreenda a importância da avaliação de aprendizagem como prática reflexiva.&url=https://monografias.brasilescola.uol.com.br/pedagogia/a-importancia-da-avaliacao-de-aprendizagem-como-pratica-reflexiva.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+									</a>
+									<a href="https://monografias.brasilescola.uol.com.br/pedagogia/a-importancia-da-avaliacao-de-aprendizagem-como-pratica-reflexiva.htm"
+									    class="f-direita">
+										VER MATÉRIA
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="bloco-materia-img">
+							<h2 class="monografias-page">
+								Adm. & Finanças </h2>
+							<img src="https://brasilescola.uol.com.br/upload/chamadas/-598b79e802ece.jpg" class="materia-imagem-pequena f-esquerda" alt=""
+							    title="">
+							<div class="materia-conteudo">
+								<a href="https://monografias.brasilescola.uol.com.br/administracao-financas/indutores-inovacao-estudo-caso-uma-empresa-saneamento-basico.htm">
+									Indutores da inovação: estudo de caso em uma empresa de saneamento básico. </a>
+							</div>
+							<div class="compartilhar-materia monografias-page-borda">
+								<div class="conteudo-compartilhar monografias-page">
+									COMPARTILHE
+									<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fadministracao-financas%2Findutores-inovacao-estudo-caso-uma-empresa-saneamento-basico.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+									</a>
+									<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Indutores da inovação: estudo de caso em uma empresa de saneamento básico.&url=https://monografias.brasilescola.uol.com.br/administracao-financas/indutores-inovacao-estudo-caso-uma-empresa-saneamento-basico.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+									</a>
+									<a href="https://monografias.brasilescola.uol.com.br/administracao-financas/indutores-inovacao-estudo-caso-uma-empresa-saneamento-basico.htm"
+									    class="f-direita">
+										VER MATÉRIA
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<span class="clear"></span>
+					<span class="border-4"></span>
+					<span class="destaques-title">
+						<h2>mais acessados</h2>
+						<nav class="menu-mais-acessados">
+							<ul>
+								<li>
+									<a href="javascript:void(0);" onclick="omnia_habilita_haba(1);" class="active" id="omnia-link-mais-acessados-1">
+										Ciências Humanas </a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" id="omnia-link-mais-acessados-2" onclick="omnia_habilita_haba(2);">
+										Ciências Exatas </a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" id="omnia-link-mais-acessados-3" onclick="omnia_habilita_haba(3);">
+										Pedagogia </a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" id="omnia-link-mais-acessados-4" onclick="omnia_habilita_haba(4);">
+										Ciências da Saúde </a>
+								</li>
+							</ul>
+							<span class="clear"></span>
+						</nav>
+						<span class="clear"></span>
+					</span>
+					<span class="border-2"></span>
+
+					<!-- inicio bloco 1 -->
+					<div class="br-grid-2 br-grid-primeiro" id="omnia-link-mais-acessados-1-a">
+						<div class="br-grid-1 br-grid-primeiro">
+							<div class="bloco-materia">
+								<h2 class="monografias-page">
+									Direito </h2>
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/direito/uma-analise-aplicabilidade-estatuto-idoso-no-municipio-esperanca-pb.htm">
+										Uma análise de aplicabilidade do estatuto do idoso no município de Esperança (PB). </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fdireito%2Fuma-analise-aplicabilidade-estatuto-idoso-no-municipio-esperanca-pb.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Uma análise de aplicabilidade do estatuto do idoso no município de Esperança (PB).&url=https://monografias.brasilescola.uol.com.br/direito/uma-analise-aplicabilidade-estatuto-idoso-no-municipio-esperanca-pb.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/direito/uma-analise-aplicabilidade-estatuto-idoso-no-municipio-esperanca-pb.htm"
+										    class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="bloco-materia-img">
+								<h2 class="monografias-page">
+									Inglês </h2>
+								<img src="https://brasilescola.uol.com.br/upload/chamadas/-599df758c52ef.jpg" class="materia-imagem-pequena f-esquerda" alt=""
+								    title="">
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/educacao/compreensao-oral-lingua-inglesa-via-moodle-possibilidades-perspectivas.htm">
+										Compreensão oral da língua inglesa via moodle: possibilidades e perspectivas. </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Feducacao%2Fcompreensao-oral-lingua-inglesa-via-moodle-possibilidades-perspectivas.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Compreensão oral da língua inglesa via moodle: possibilidades e perspectivas.&url=https://monografias.brasilescola.uol.com.br/educacao/compreensao-oral-lingua-inglesa-via-moodle-possibilidades-perspectivas.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/educacao/compreensao-oral-lingua-inglesa-via-moodle-possibilidades-perspectivas.htm"
+										    class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="br-grid-1 br-grid-ultimo">
+							<div class="bloco-materia-img">
+								<h2 class="monografias-page">
+									Sociologia </h2>
+								<img src="https://brasilescola.uol.com.br/upload/chamadas/-599df876d9ed0.jpg" class="materia-imagem-pequena f-esquerda" alt=""
+								    title="">
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/sociologia/o-uso-smatphones-sala-aula-um-caso-estudantes-ensino-medio-cuiaba.htm">
+										O uso dos smartphones em sala: um caso de estudantes em Cuiabá (MT). </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fsociologia%2Fo-uso-smatphones-sala-aula-um-caso-estudantes-ensino-medio-cuiaba.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=O uso dos smartphones em sala: um caso de estudantes em Cuiabá (MT).&url=https://monografias.brasilescola.uol.com.br/sociologia/o-uso-smatphones-sala-aula-um-caso-estudantes-ensino-medio-cuiaba.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/sociologia/o-uso-smatphones-sala-aula-um-caso-estudantes-ensino-medio-cuiaba.htm"
+										    class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="bloco-materia">
+								<h2 class="monografias-page">
+									Educação </h2>
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/educacao/o-aprendizado-aluno-com-necessidades-educacionais-especiais-por-meio-uso-informatica-escola.htm">
+										O aprendizado do aluno com necessidades educacionais especiais e a informática. </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Feducacao%2Fo-aprendizado-aluno-com-necessidades-educacionais-especiais-por-meio-uso-informatica-escola.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=O aprendizado do aluno com necessidades educacionais especiais e a informática.&url=https://monografias.brasilescola.uol.com.br/educacao/o-aprendizado-aluno-com-necessidades-educacionais-especiais-por-meio-uso-informatica-escola.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/educacao/o-aprendizado-aluno-com-necessidades-educacionais-especiais-por-meio-uso-informatica-escola.htm"
+										    class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="br-grid-1 br-grid-ultimo" id="omnia-link-mais-acessados-1-b">
+						<div class="bloco-materia-img">
+							<h2 class="monografias-page">
+								Arte & Cultura </h2>
+							<img src="https://brasilescola.uol.com.br/upload/chamadas/-599df924dceb4.jpg" class="materia-imagem-pequena f-esquerda" alt=""
+							    title="">
+							<div class="materia-conteudo">
+								<a href="https://monografias.brasilescola.uol.com.br/arte-cultura/cinema-animacao-brasileiro-analise-dos-fatores-inibidores.htm">
+									Os fatos inibidores dentro do cinema de animação brasileiro. </a>
+							</div>
+							<div class="compartilhar-materia monografias-page-borda">
+								<div class="conteudo-compartilhar monografias-page">
+									COMPARTILHE
+									<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Farte-cultura%2Fcinema-animacao-brasileiro-analise-dos-fatores-inibidores.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+									</a>
+									<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Os fatos inibidores dentro do cinema de animação brasileiro.&url=https://monografias.brasilescola.uol.com.br/arte-cultura/cinema-animacao-brasileiro-analise-dos-fatores-inibidores.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+									</a>
+									<a href="https://monografias.brasilescola.uol.com.br/arte-cultura/cinema-animacao-brasileiro-analise-dos-fatores-inibidores.htm"
+									    class="f-direita">
+										VER MATÉRIA
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="bloco-materia">
+							<h2 class="monografias-page">
+								História </h2>
+							<div class="materia-conteudo">
+								<a href="https://monografias.brasilescola.uol.com.br/historia/nos-ladrilhos-memoria-um-breve-estudo-sobre-ruas-breves.htm">
+									Nos ladrilhos da memória: um breve estudo sobre ruas da cidade de Breves (PA). </a>
+							</div>
+							<div class="compartilhar-materia monografias-page-borda">
+								<div class="conteudo-compartilhar monografias-page">
+									COMPARTILHE
+									<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fhistoria%2Fnos-ladrilhos-memoria-um-breve-estudo-sobre-ruas-breves.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+									</a>
+									<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Nos ladrilhos da memória: um breve estudo sobre ruas da cidade de Breves (PA).&url=https://monografias.brasilescola.uol.com.br/historia/nos-ladrilhos-memoria-um-breve-estudo-sobre-ruas-breves.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+									</a>
+									<a href="https://monografias.brasilescola.uol.com.br/historia/nos-ladrilhos-memoria-um-breve-estudo-sobre-ruas-breves.htm"
+									    class="f-direita">
+										VER MATÉRIA
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- fim bloco 1 -->
+
+					<!-- inicio bloco 2 -->
+
+					<div class="br-grid-2 br-grid-primeiro" id="omnia-link-mais-acessados-2-a" style="display: none;">
+						<div class="br-grid-1 br-grid-primeiro">
+							<div class="bloco-materia">
+								<h2 class="monografias-page">
+									Linguagem C </h2>
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/computacao/programando-na-linguagem-c.htm">
+										Afinal, o que é preciso para aprender a programar na Linguagem C? Fique ciente. </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fcomputacao%2Fprogramando-na-linguagem-c.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Afinal, o que é preciso para aprender a programar na Linguagem C? Fique ciente.&url=https://monografias.brasilescola.uol.com.br/computacao/programando-na-linguagem-c.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/computacao/programando-na-linguagem-c.htm" class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="bloco-materia-img">
+								<h2 class="monografias-page">
+									Internet </h2>
+								<img src="https://brasilescola.uol.com.br/upload/chamadas/-5903b529092ba.jpg" class="materia-imagem-pequena f-esquerda" alt=""
+								    title="">
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/computacao/seguranca-na-internet.htm">
+										Tudo o que você precisa aprender em relação à segurança virtual. </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fcomputacao%2Fseguranca-na-internet.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Tudo o que você precisa aprender em relação à segurança virtual.&url=https://monografias.brasilescola.uol.com.br/computacao/seguranca-na-internet.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/computacao/seguranca-na-internet.htm" class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="br-grid-1 br-grid-ultimo">
+							<div class="bloco-materia-img">
+								<h2 class="monografias-page">
+									Software </h2>
+								<img src="https://brasilescola.uol.com.br/upload/chamadas/-5903b5c276409.jpg" class="materia-imagem-pequena f-esquerda" alt=""
+								    title="">
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/computacao/javascript.htm">
+										Acesse agora um tutorial completo sobre JavaScript e funcionalidades. </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fcomputacao%2Fjavascript.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Acesse agora um tutorial completo sobre JavaScript e funcionalidades.&url=https://monografias.brasilescola.uol.com.br/computacao/javascript.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/computacao/javascript.htm" class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="bloco-materia">
+								<h2 class="monografias-page">
+									Hardware </h2>
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/computacao/hardware.htm">
+										Você sabe o que é hardware? Leia um trabalho completo do assunto. </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fcomputacao%2Fhardware.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Você sabe o que é hardware? Leia um trabalho completo do assunto.&url=https://monografias.brasilescola.uol.com.br/computacao/hardware.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/computacao/hardware.htm" class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="br-grid-1 br-grid-ultimo" id="omnia-link-mais-acessados-2-b" style="display: none;">
+						<div class="bloco-materia-img">
+							<h2 class="monografias-page">
+								Probabilidade </h2>
+							<img src="https://brasilescola.uol.com.br/upload/chamadas/-5903b70804a7c.jpg" class="materia-imagem-pequena f-esquerda" alt=""
+							    title="">
+							<div class="materia-conteudo">
+								<a href="https://monografias.brasilescola.uol.com.br/matematica/probabilidade.htm">
+									De qual maneira, a probabilidade é vista nas aulas de Matemática? Leia. </a>
+							</div>
+							<div class="compartilhar-materia monografias-page-borda">
+								<div class="conteudo-compartilhar monografias-page">
+									COMPARTILHE
+									<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fmatematica%2Fprobabilidade.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+									</a>
+									<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=De qual maneira, a probabilidade é vista nas aulas de Matemática? Leia.&url=https://monografias.brasilescola.uol.com.br/matematica/probabilidade.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+									</a>
+									<a href="https://monografias.brasilescola.uol.com.br/matematica/probabilidade.htm" class="f-direita">
+										VER MATÉRIA
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="bloco-materia">
+							<h2 class="monografias-page">
+								História da Matemática </h2>
+							<div class="materia-conteudo">
+								<a href="https://monografias.brasilescola.uol.com.br/matematica/historia-matematica.htm">
+									A história de criação de uma das ciências mais importantes que existem. </a>
+							</div>
+							<div class="compartilhar-materia monografias-page-borda">
+								<div class="conteudo-compartilhar monografias-page">
+									COMPARTILHE
+									<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fmatematica%2Fhistoria-matematica.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+									</a>
+									<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=A história de criação de uma das ciências mais importantes que existem.&url=https://monografias.brasilescola.uol.com.br/matematica/historia-matematica.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+									</a>
+									<a href="https://monografias.brasilescola.uol.com.br/matematica/historia-matematica.htm" class="f-direita">
+										VER MATÉRIA
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- fim bloco 2 -->
+
+					<!-- inicio bloco 3 -->
+
+					<div class="br-grid-2 br-grid-primeiro" id="omnia-link-mais-acessados-3-a" style="display: none;">
+						<div class="br-grid-1 br-grid-primeiro">
+							<div class="bloco-materia">
+								<h2 class="monografias-page">
+									Educação Atual </h2>
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/pedagogia/aeducacao-atual.htm">
+										A educação atual e as características das escolas consideradas eficazes. </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fpedagogia%2Faeducacao-atual.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=A educação atual e as características das escolas consideradas eficazes.&url=https://monografias.brasilescola.uol.com.br/pedagogia/aeducacao-atual.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/pedagogia/aeducacao-atual.htm" class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="bloco-materia-img">
+								<h2 class="monografias-page">
+									Coordenador Pedagógico </h2>
+								<img src="https://brasilescola.uol.com.br/upload/chamadas/-5932a94922ba4.jpg" class="materia-imagem-pequena f-esquerda" alt=""
+								    title="">
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/pedagogia/os-desafios-enfrentados-pelo-coordenador-pedagogico-no-ambiente-escolar.htm">
+										Quais são os principais desafios enfrentados pelo coordenador pedagógico no ambiente escolar? </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fpedagogia%2Fos-desafios-enfrentados-pelo-coordenador-pedagogico-no-ambiente-escolar.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Quais são os principais desafios enfrentados pelo coordenador pedagógico no ambiente escolar?&url=https://monografias.brasilescola.uol.com.br/pedagogia/os-desafios-enfrentados-pelo-coordenador-pedagogico-no-ambiente-escolar.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/pedagogia/os-desafios-enfrentados-pelo-coordenador-pedagogico-no-ambiente-escolar.htm"
+										    class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="br-grid-1 br-grid-ultimo">
+							<div class="bloco-materia-img">
+								<h2 class="monografias-page">
+									Relações de Gênero </h2>
+								<img src="https://brasilescola.uol.com.br/upload/chamadas/-5932aa209803e.jpg" class="materia-imagem-pequena f-esquerda" alt=""
+								    title="">
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/pedagogia/relacoes-genero-sexualidade.htm">
+										As relações de gênero e sexualidade dentro da prática docente. </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fpedagogia%2Frelacoes-genero-sexualidade.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=As relações de gênero e sexualidade dentro da prática docente.&url=https://monografias.brasilescola.uol.com.br/pedagogia/relacoes-genero-sexualidade.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/pedagogia/relacoes-genero-sexualidade.htm" class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="bloco-materia">
+								<h2 class="monografias-page">
+									Música na Educação Infantil </h2>
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/pedagogia/a-importancia-musica-na-educacao-infantil.htm">
+										A música pode ter um papel muito importante na educação infantil. Não deixe de ler! </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fpedagogia%2Fa-importancia-musica-na-educacao-infantil.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=A música pode ter um papel muito importante na educação infantil. Não deixe de ler!&url=https://monografias.brasilescola.uol.com.br/pedagogia/a-importancia-musica-na-educacao-infantil.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/pedagogia/a-importancia-musica-na-educacao-infantil.htm" class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="br-grid-1 br-grid-ultimo" id="omnia-link-mais-acessados-3-b" style="display: none;">
+						<div class="bloco-materia-img">
+							<h2 class="monografias-page">
+								Gêneros Digitais </h2>
+							<img src="https://brasilescola.uol.com.br/upload/chamadas/-5932b1cee706e.jpg" class="materia-imagem-pequena f-esquerda" alt=""
+							    title="">
+							<div class="materia-conteudo">
+								<a href="https://monografias.brasilescola.uol.com.br/educacao/generos-digitais-ensino-uma-analise-linguagem-escrita-na-sala-de-aula.htm">
+									Gêneros digitais e ensino: uma análise da linguagem escrita na sala de aula. </a>
+							</div>
+							<div class="compartilhar-materia monografias-page-borda">
+								<div class="conteudo-compartilhar monografias-page">
+									COMPARTILHE
+									<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Feducacao%2Fgeneros-digitais-ensino-uma-analise-linguagem-escrita-na-sala-de-aula.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+									</a>
+									<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Gêneros digitais e ensino: uma análise da linguagem escrita na sala de aula.&url=https://monografias.brasilescola.uol.com.br/educacao/generos-digitais-ensino-uma-analise-linguagem-escrita-na-sala-de-aula.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+									</a>
+									<a href="https://monografias.brasilescola.uol.com.br/educacao/generos-digitais-ensino-uma-analise-linguagem-escrita-na-sala-de-aula.htm"
+									    class="f-direita">
+										VER MATÉRIA
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="bloco-materia">
+							<h2 class="monografias-page">
+								Pedagogia Holística </h2>
+							<div class="materia-conteudo">
+								<a href="https://monografias.brasilescola.uol.com.br/pedagogia/pedagogiaholistica-um-novo-olhar-na-educacao.htm">
+									Você já ouviu falar sobre a pedagogia holística? Acesse o nosso artigo e fique por dentro! </a>
+							</div>
+							<div class="compartilhar-materia monografias-page-borda">
+								<div class="conteudo-compartilhar monografias-page">
+									COMPARTILHE
+									<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fpedagogia%2Fpedagogiaholistica-um-novo-olhar-na-educacao.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+									</a>
+									<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Você já ouviu falar sobre a pedagogia holística? Acesse o nosso artigo e fique por dentro!&url=https://monografias.brasilescola.uol.com.br/pedagogia/pedagogiaholistica-um-novo-olhar-na-educacao.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+									</a>
+									<a href="https://monografias.brasilescola.uol.com.br/pedagogia/pedagogiaholistica-um-novo-olhar-na-educacao.htm" class="f-direita">
+										VER MATÉRIA
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- fim bloco 3 -->
+
+					<!-- inicio bloco 4 -->
+
+					<div class="br-grid-2 br-grid-primeiro" id="omnia-link-mais-acessados-4-a" style="display: none;">
+						<div class="br-grid-1 br-grid-primeiro">
+							<div class="bloco-materia">
+								<h2 class="monografias-page">
+									Anabolizantes </h2>
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/saude/os-riscos-uso-nao-clinico-esteroides-anabolizantes.htm">
+										Veja os riscos do uso não clínico de esteroides anabolizantes. </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fsaude%2Fos-riscos-uso-nao-clinico-esteroides-anabolizantes.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Veja os riscos do uso não clínico de esteroides anabolizantes.&url=https://monografias.brasilescola.uol.com.br/saude/os-riscos-uso-nao-clinico-esteroides-anabolizantes.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/saude/os-riscos-uso-nao-clinico-esteroides-anabolizantes.htm" class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="bloco-materia-img">
+								<h2 class="monografias-page">
+									Saúde Mental </h2>
+								<img src="https://brasilescola.uol.com.br/upload/chamadas/-5931d85ead37c.jpg" class="materia-imagem-pequena f-esquerda" alt=""
+								    title="">
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/saude/saude-mental.htm">
+										Acesse um trabalho completo sobre saúde mental. </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fsaude%2Fsaude-mental.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Acesse um trabalho completo sobre saúde mental.&url=https://monografias.brasilescola.uol.com.br/saude/saude-mental.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/saude/saude-mental.htm" class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="br-grid-1 br-grid-ultimo">
+							<div class="bloco-materia-img">
+								<h2 class="monografias-page">
+									Medicina </h2>
+								<img src="https://brasilescola.uol.com.br/upload/chamadas/-5931d4b0b6e0e.jpg" class="materia-imagem-pequena f-esquerda" alt=""
+								    title="">
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/medicina/sistema-nervoso.htm">
+										Compreenda como se deu a evolução do sistema nervoso. </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fmedicina%2Fsistema-nervoso.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Compreenda como se deu a evolução do sistema nervoso.&url=https://monografias.brasilescola.uol.com.br/medicina/sistema-nervoso.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/medicina/sistema-nervoso.htm" class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="bloco-materia">
+								<h2 class="monografias-page">
+									Coluna Vertebral </h2>
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/medicina/coluna-vertebral.htm">
+										O que você precisa saber sobre essa parte tão importante para o nosso corpo. </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fmedicina%2Fcoluna-vertebral.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=O que você precisa saber sobre essa parte tão importante para o nosso corpo.&url=https://monografias.brasilescola.uol.com.br/medicina/coluna-vertebral.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/medicina/coluna-vertebral.htm" class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="br-grid-1 br-grid-ultimo" id="omnia-link-mais-acessados-4-b" style="display: none;">
+						<div class="bloco-materia-img">
+							<h2 class="monografias-page">
+								Saúde </h2>
+							<img src="https://brasilescola.uol.com.br/upload/chamadas/-5931d16a0982d.jpg" class="materia-imagem-pequena f-esquerda" alt=""
+							    title="">
+							<div class="materia-conteudo">
+								<a href="https://monografias.brasilescola.uol.com.br/saude/o-marketing-uso-irracional-medicamentos.htm">
+									Afinal, o marketing é responsável pelo uso irracional de medicamentos? </a>
+							</div>
+							<div class="compartilhar-materia monografias-page-borda">
+								<div class="conteudo-compartilhar monografias-page">
+									COMPARTILHE
+									<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fsaude%2Fo-marketing-uso-irracional-medicamentos.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+									</a>
+									<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Afinal, o marketing é responsável pelo uso irracional de medicamentos?&url=https://monografias.brasilescola.uol.com.br/saude/o-marketing-uso-irracional-medicamentos.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+									</a>
+									<a href="https://monografias.brasilescola.uol.com.br/saude/o-marketing-uso-irracional-medicamentos.htm" class="f-direita">
+										VER MATÉRIA
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="bloco-materia">
+							<h2 class="monografias-page">
+								Hanseníase </h2>
+							<div class="materia-conteudo">
+								<a href="https://monografias.brasilescola.uol.com.br/enfermagem/caracterizacao-epidemiologica-hanseniase.htm">
+									Fique por dentro da caracterização epidemiológica dessa doença tão grave. </a>
+							</div>
+							<div class="compartilhar-materia monografias-page-borda">
+								<div class="conteudo-compartilhar monografias-page">
+									COMPARTILHE
+									<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fenfermagem%2Fcaracterizacao-epidemiologica-hanseniase.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+									</a>
+									<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Fique por dentro da caracterização epidemiológica dessa doença tão grave.&url=https://monografias.brasilescola.uol.com.br/enfermagem/caracterizacao-epidemiologica-hanseniase.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+									</a>
+									<a href="https://monografias.brasilescola.uol.com.br/enfermagem/caracterizacao-epidemiologica-hanseniase.htm" class="f-direita">
+										VER MATÉRIA
+										<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- fim bloco 4 -->
+
+					<span class="clear"></span>
+					<span class="border-4"></span>
+
+					<span class="destaques-title">
+						<h2>
+							Destaques </h2>
+						<span class="clear"></span>
+					</span>
+					<span class="border-2"></span>
+					<div class="br-grid-2 br-grid-primeiro">
+						<div class="br-grid-1 br-grid-primeiro">
+							<div class="bloco-materia-img">
+								<h2 class="monografias-page">
+									Direito </h2>
+								<img src="https://brasilescola.uol.com.br/upload/chamadas/-59f0f8364d1a7.png" class="materia-imagem-pequena f-esquerda" alt=""
+								    title="">
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/direito/a-constitucionalidade-uber-um-estudo-multidisciplinar-no-ordenamento-juridico.htm">
+										Um estudo multidisciplinar sobre o caso da Uber no Brasil. </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fdireito%2Fa-constitucionalidade-uber-um-estudo-multidisciplinar-no-ordenamento-juridico.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Um estudo multidisciplinar sobre o caso da Uber no Brasil.&url=https://monografias.brasilescola.uol.com.br/direito/a-constitucionalidade-uber-um-estudo-multidisciplinar-no-ordenamento-juridico.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/direito/a-constitucionalidade-uber-um-estudo-multidisciplinar-no-ordenamento-juridico.htm"
+										    class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="br-grid-1 br-grid-ultimo">
+							<div class="br-grid-1 br-grid-primeiro">
+								<div class="bloco-materia">
+									<h2 class="monografias-page">
+										Arte & Cultura </h2>
+									<div class="materia-conteudo">
+										<a href="https://monografias.brasilescola.uol.com.br/arte-cultura/filme-alem-tela-comunicacao-cinema-nos-cineclubes-belem.htm">
+											O filme além da tela: comunicação e cinema nos cineclubes de Belém do Pará. </a>
+									</div>
+									<div class="compartilhar-materia monografias-page-borda">
+										<div class="conteudo-compartilhar monografias-page">
+											COMPARTILHE
+											<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Farte-cultura%2Ffilme-alem-tela-comunicacao-cinema-nos-cineclubes-belem.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+												<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+											</a>
+											<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=O filme além da tela: comunicação e cinema nos cineclubes de Belém do Pará.&url=https://monografias.brasilescola.uol.com.br/arte-cultura/filme-alem-tela-comunicacao-cinema-nos-cineclubes-belem.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+												<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+											</a>
+											<a href="https://monografias.brasilescola.uol.com.br/arte-cultura/filme-alem-tela-comunicacao-cinema-nos-cineclubes-belem.htm"
+											    class="f-direita">
+												VER MATÉRIA
+												<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="br-grid-1 br-grid-ultimo">
+						<div class="br-grid-1 br-grid-primeiro">
+							<div class="bloco-materia-img">
+								<h2 class="monografias-page">
+									Biologia </h2>
+								<img src="https://brasilescola.uol.com.br/upload/chamadas/-598b83c63d0eb.jpg" class="materia-imagem-pequena f-esquerda" alt=""
+								    title="">
+								<div class="materia-conteudo">
+									<a href="https://monografias.brasilescola.uol.com.br/biologia/as-questoes-ambientais-ensino-biologia.htm">
+										Por que o ensino das questões ambientais é tão importante em Biologia? </a>
+								</div>
+								<div class="compartilhar-materia monografias-page-borda">
+									<div class="conteudo-compartilhar monografias-page">
+										COMPARTILHE
+										<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmonografias.brasilescola.uol.com.br%2Fbiologia%2Fas-questoes-ambientais-ensino-biologia.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-curtir.png" alt="Curtir" title="Curtir">
+										</a>
+										<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Por que o ensino das questões ambientais é tão importante em Biologia?&url=https://monografias.brasilescola.uol.com.br/biologia/as-questoes-ambientais-ensino-biologia.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-twitar.png" alt="Twitar" title="Twitar">
+										</a>
+										<a href="https://monografias.brasilescola.uol.com.br/biologia/as-questoes-ambientais-ensino-biologia.htm" class="f-direita">
+											VER MATÉRIA
+											<img src="https://monografias.brasilescola.uol.com.br/assets/images/icons/materia-ver.png" alt="Ver matéria" title="Ver matéria">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<span class="clear"></span>
+					<span class="border-4"></span>
+
+					<!--Shopping-->
+
+				</div>
+				<div class="grid-2">
+					<div class="br-grid-1-publicidade">
+						<!-- Home - Island 2 - 300x250 -->
+						<span class="texto-publicidade">
+							PUBLICIDADE
+						</span>
+						<div style='height:250px; width:300px;'>
+							<!-- 300x250 - 2 - UOL AD -->
+							<div id="banner-300x250-2-area">
+								<script>
+									window.uolads && window.uolads.push({
+										id: "banner-300x250-2-area"
+									});
+								</script>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="bloco-duvidas">
+						<div class="bloco-duvidas-title">
+							Educador </div>
+						<span class="link-canal">
+							<a href="http://educador.brasilescola.com/" class="omnia-link-visite-canal">
+								Visite o canal
+							</a>
+						</span>
+						<div>
+							&nbsp;
+						</div>
+						<div class="bloco-duvidas-conteudo">
+							<div class="bloco-duvidas-bloco">
+								<img src="https://brasilescola.uol.com.br/upload/chamadas/estrategia-ensino-57ed2c9b80e4b.jpg" alt="Estratégia de ensino "
+								    title="Estratégia de ensino ">
+								<div class="duvidas-conteudo">
+									<h4>
+										Estratégia de ensino </h4>
+									<a href="https://educador.brasilescola.uol.com.br/estrategias-ensino/documentario-meninas-para-abordar-gravidez-na-adolescencia.htm">
+										Filme para ensinar biologia. Veja como! </a>
+									<span class="clear"></span>
+								</div>
+								<span class="clear"></span>
+							</div>
+							<div class="bloco-duvidas-bloco">
+								<img src="https://brasilescola.uol.com.br/upload/chamadas/educador-57ed2bd1bf88e.jpg" alt="Educador " title="Educador ">
+								<div class="duvidas-conteudo">
+									<h4>
+										Estratégia de ensino </h4>
+									<a href="https://educador.brasilescola.uol.com.br/sugestoes-pais-professores/aplicativos-para-sala-aula.htm#">
+										Aplicativos no processo de ensino. Entenda! </a>
+									<span class="clear"></span>
+								</div>
+								<span class="clear"></span>
+							</div>
+						</div>
+					</div>
+
+					<div id="box_dir_social" style="margin: 10px 0 10px 0;">
+						<ul>
+							<li>
+								<a href="https://www.facebook.com/brasilescola" target="_blank" title="Facebook"></a>
+							</li>
+							<li>
+								<a href="https://twitter.com/brasilescola" target="_blank" title="Twitter"></a>
+							</li>
+							<li>
+								<a href="https://plus.google.com/+brasilescola/posts" target="_blank" title="G+"></a>
+							</li>
+							<li>
+								<a href="https://www.youtube.com/channel/UCsgHWN8lYveMUEWTDheTjZA" target="_blank" title="YouTube"></a>
+							</li>
+							<li>
+								<a href="https://monografias.brasilescola.uol.com.br/rss/" title="rss"></a>
+							</li>
+						</ul>
+					</div>
+
+					<div style="height: 600px;">
+						<!-- Home - Half Page - 300x600 -->
+						<span class="texto-publicidade">
+							PUBLICIDADE
+						</span>
+						<div style='width:300px; height:600px;'>
+							<!-- 300x600 - 1 - UOL AD -->
+							<div id="banner-300x600-area">
+								<script>
+									window.uolads && window.uolads.push({
+										id: "banner-300x600-area"
+									});
+								</script>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<span class="clear"></span>
+			</div>
+			<span class="clear"></span>
+		</div>
+		<span class="clear"></span>
+	</div>
+	<div class="rodape">
+		<div class="centro">
+			<ul class="rodape-links">
+				<li style="min-width: 90px;">
+					<a href="http://www.redeomnia.com/sobre-nos/" rel="noindex, nofollow" target="_blank">
+						Quem somos
+					</a>
+				</li>
+				<li style="min-width: 118px;">
+					<a href="http://www.redeomnia.com/portfolios/brasil-escola/" rel="noindex, nofollow" target="_blank">
+						Anuncie no Brasil Escola
+					</a>
+				</li>
+				<li style="min-width: 78px;">
+					<a href="http://www.redeomnia.com/equipe/" rel="noindex, nofollow" target="_blank">
+						Expediente
+					</a>
+				</li>
+				<li style="min-width: 155px;">
+					<a href="https://brasilescola.uol.com.br/politica-de-privacidade/" target="_blank">
+						Política de Privacidade
+					</a>
+				</li>
+				<li style="min-width: 106px;">
+					<a href="https://brasilescola.uol.com.br/termos-de-uso/" target="_blank">
+						Termos de Uso
+					</a>
+				</li>
+				<li>
+					<a href="http://www.brasilescola.com/contato/" target="_blank">
+						Fale Conosco
+					</a>
+				</li>
+				<span class="clear"></span>
+			</ul>
+			<div class="siga f-direita">
+				<ul>
+					<li>SIGA O
+						<b>BRASIL ESCOLA</b>
+					</li>
+					<li>
+						<a href="https://www.facebook.com/brasilescola" class="media-facebook" target="_blank"></a>
+					</li>
+					<li>
+						<a href="https://twitter.com/brasilescola" class="media-twitter" target="_blank"></a>
+					</li>
+					<li>
+						<a href="https://plus.google.com/+brasilescola/posts" class="media-gplus" target="_blank"></a>
+					</li>
+					<li>
+						<a href="https://www.youtube.com/channel/UCsgHWN8lYveMUEWTDheTjZA" class="media-youtube" target="_blank"></a>
+					</li>
+					<li>
+						<a href="https://brasilescola.uol.com.br/rss/" class="media-rss" target="_blank"></a>
+					</li>
+				</ul>
+			</div>
+			<span class="clear"></span>
+		</div>
+		<div class="diretorio">
+			<div class="centro" >
+				<div class="logo-brasil-escola">
+					<a href="https://brasilescola.uol.com.br">
+						<img src="https://monografias.brasilescola.uol.com.br/assets/images/cabecalho/brasil-escola-logo.png" alt="Brasil Escola"
+						    title="Brasil Escola">
+					</a>
+				</div>
+				<div class="menu-rodape" id="menu-rodape">
+					<ul class="menu-item">
+						<li class="menu_rodape_01-borda menu-bloco">
+							<a href="//alunosonline.uol.com.br" target="_blank" class="menu_rodape_01-color">
+								Alunos Online
+							</a>
+						</li>
+
+						<li class="menu_rodape_02-borda menu-bloco">
+							<a href="//biologianet.uol.com.br" target="_blank" class="menu_rodape_02-color">
+								Biologia Net
+							</a>
+						</li>
+
+						<li class="menu_rodape_03-borda menu-bloco">
+							<a href="//escolakids.uol.com.br" target="_blank" class="menu_rodape_03-color">
+								Escola Kids
+							</a>
+						</li>
+
+						<li class="menu_rodape_04-borda menu-bloco">
+							<a href="//exercicios.mundoeducacao.bol.uol.com.br" target="_blank" class="menu_rodape_04-color">
+								Exercícios Mundo
+								<br/> Educação
+							</a>
+						</li>
+
+						<li class="menu_rodape_05-borda menu-bloco">
+							<a href="//historiadomundo.uol.com.br" target="_blank" class="menu_rodape_05-color">
+								História do
+								<br/> Mundo
+							</a>
+						</li>
+
+						<li class="menu_rodape_06-borda menu-bloco">
+							<a href="//manualdaquimica.uol.com.br" target="_blank" class="menu_rodape_06-color">
+								Manual da
+								<br/> Química
+							</a>
+						</li>
+
+						<li class="menu_rodape_07-borda menu-bloco">
+							<a href="//mundoeducacao.bol.uol.com.br" target="_blank" class="menu_rodape_07-color">
+								Mundo Educação
+							</a>
+						</li>
+
+						<li class="menu_rodape_08-borda menu-bloco">
+							<a href="//portugues.uol.com.br" target="_blank" class="menu_rodape_08-color">
+								Português
+							</a>
+						</li>
+
+						<li class="menu_rodape_09-borda menu-bloco">
+							<a href="//vestibular.mundoeducacao.bol.uol.com.br" target="_blank" class="menu_rodape_09-color">
+								Vestibular Mundo
+								<br/> Educação
+							</a>
+						</li>
+					</ul>
+					<span class="clear"></span>
+				</div>
+			</div>
+		</div>
+		<div class="itens-rodape">
+			<div class="centro" style="padding: 18px 0px 18px 160px;">
+				<a href="https://monografias.brasilescola.uol.com.br/" class="logo-rodape f-esquerda">
+					<img src="https://monografias.brasilescola.uol.com.br/assets/images/logo-rodape.png" alt="Monografias Brasil Escola" title="Monografias Brasil Escola">
+				</a>
+				<div class="copyright">
+					Resolução mínima de 1024x768. Copyright © 2018 Rede Omnia - Todos os direitos reservados
+					<br> Proibida a reprodução total ou parcial sem prévia autorização (Inciso I do Artigo 29 Lei 9.610/98)
+				</div>
+
+				<span class="clear"></span>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://monografias.brasilescola.uol.com.br/assets/js/jquery-latest.min.js"></script>
+	<script src="https://monografias.brasilescola.uol.com.br/assets/js/classie.min.js"></script>
+	<script src="https://monografias.brasilescola.uol.com.br/assets/js/index.min.js?v5862"></script>
+	<script src="https://monografias.brasilescola.uol.com.br/assets/js/bjqs-1.3.js"></script>
+
+	<script src="https://monografias.brasilescola.uol.com.br/assets/slick/slick.min.js"></script>
+	<script type="text/javascript" src="https://monografias.brasilescola.uol.com.br/assets/plugins/jssor_slider/jssor.js"></script>
+	<script type="text/javascript" src="https://monografias.brasilescola.uol.com.br/assets/plugins/jssor_slider/jssor.slider.js"></script>
+
+	<script src="https://monografias.brasilescola.uol.com.br/assets/js/omnia.min.js?v5862"></script>
+
+	<div id="fb-root"></div>
+	<script>
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.3&appId=373234989386443";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<div class="mtlsr-lightbox"></div>
+
+	<script type="text/javascript">
+		window.NREUM || (NREUM = {});
+		NREUM.info = {
+			"beacon": "bam.nr-data.net",
+			"licenseKey": "6a5485b2c2",
+			"applicationID": "11362621",
+			"transactionName": "MwRWbRNYDEICUkFYXwpOYUsIFgtfB1RNH0AMEQ==",
+			"queueTime": 0,
+			"applicationTime": 58,
+			"atts": "H0NVG1tCH0w=",
+			"errorBeacon": "bam.nr-data.net",
+			"agent": ""
+		}
+	</script>
+</body>
+
+<!-- get_likes-->
+<script>
+	$(window).load(function () {
+		var url = 'https://monografias.brasilescola.uol.com.br/';
+		$.ajax({
+			url: 'https://graph.facebook.com',
+			async: true,
+			type: 'GET',
+			data: {
+				ids: url,
+				access_token: '349204501795601|N5zwgxCLaCSYqbX4tmxYAVtcEBQ'
+			},
+			dataType: 'json',
+			success: function (json) {
+				if (json[url]) {
+					$('#get_likes').text(json[url].share.share_count);
+				}
+			}
+		});
+	});
+</script>
+
+</html>
