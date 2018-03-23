@@ -1486,7 +1486,7 @@ header .cab-facebook {
 }
 
 .menu ul .monografias-borda .menu-col {
-    position: relative;
+    position: absolute;
     background-color: #d78602
 }
 
@@ -1509,38 +1509,45 @@ header .cab-facebook {
 }
 
 .menu ul .monografias-borda:nth-child(2) .menu-col {
-    left: -155px;
-    position: relative
+    /* left: -155px; */
+    left:0px;
+    position: absolute;
 }
 
 .menu ul .monografias-borda:nth-child(3) .menu-col {
-    left: -310px;
-    position: relative
+    /* left: -310px; */
+    left:0px;
+    position: absolute;
 }
 
 .menu ul .monografias-borda:nth-child(4) .menu-col {
-    left: -465px;
-    position: relative
+    /* left: -465px; */
+    left:0px;
+    position: absolute;
 }
 
 .menu ul .monografias-borda:nth-child(5) .menu-col {
-    left: -620px;
-    position: relative
+    /* left: -620px; */
+    left:0px;
+    position: absolute;
 }
 
 .menu ul .monografias-borda:nth-child(6) .menu-col {
-    left: -775px;
-    position: relative
+    /* left: -775px; */
+    left:0px;
+    position: absolute;
 }
 
 .menu ul .monografias-borda:nth-child(7) .menu-col {
-    left: -930px;
-    position: relative
+    /* left: -930px; */
+    left:0px;
+    position: absolute;
 }
 
 .menu ul .monografias-borda:nth-child(8) .menu-col {
-    left: -1085px;
-    position: relative
+    /* left: -1085px;*/
+    left:0px;
+    position: absolute;
 }
 
 .menu ul li ul {
@@ -6391,8 +6398,8 @@ body .conteudo-materia .accordion .sobre-all.active-item:after,body .conteudo-ma
 
 .menu-topo .menu-item .menu-bloco .menu-col{
     position: absolute;
-    left: 0px;
-    width: 100vw;
+    left: 211px;
+    width: 1241px;
     z-index:14;
 }
 
@@ -6572,6 +6579,7 @@ body .conteudo-materia .accordion .sobre-all.active-item:after,body .conteudo-ma
     -o-transition: all 200ms ease;
     transition: all 200ms ease;
     font-weight: 500;
+    color : #fff;
     font-family: 'Raleway', sans-serif;
 }
 
